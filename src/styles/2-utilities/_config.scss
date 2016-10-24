@@ -1,0 +1,64 @@
+/////////////
+// Config //
+///////////
+
+// Font Weights //
+$font-weight--thin: lighter;
+$font-weight--medium: normal;
+$font-weight--bold: bold;
+
+// Font Sizes //
+// Calculated with http://www.modularscale.com/?1&em&1.067&web&text
+$text-size--xxsmall: 0.889rem;
+$text-size--xsmall: 1rem;
+$text-size--small: 1.125rem;
+$text-size: 1.25rem;
+$text-size--big: 1.563rem;
+$text-size--large: 1.953rem;
+$text-size--xlarge: 2.441rem;
+$text-size--xxlarge: 3.052rem;
+$text-size--giant: 3.815rem;
+$text-size--mega: 4.768em;
+
+// Base Text //
+$base__font-size: $text-size;
+$base__line-height: 1.875rem;
+$base__font-weight: $font-weight--medium;
+
+// Font Stacks //
+$font-family--mono: 'Playfair Display SC', serif;
+$font-family--primary: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$font-family--secondary: 'Megrim', cursive;
+
+// Headings //
+$heading--font-family: $font-family--secondary;
+$heading--font-weight: $font-weight--bold;
+$heading--line-height: $base__line-height * 3;
+$heading--color: grey;
+
+// Spacing //
+$spacing: $base__line-height;
+$spacing--small: $spacing / 2;
+$spacing--xsmall: $spacing / 3;
+$spacing--large: $spacing * 2;
+$spacing--xlarge: $spacing * 3;
+
+// Breakpoints
+$mobile: 320px; // iPhone 5
+$phablet: 412px; // iPhone 6
+$tablet: 768px; // iPhone 6
+
+// Border
+$border-width: .1rem;
+
+// Z Index //
+$zindex--01: -1;
+$zindex--0: 0;
+$zindex--1: 100;
+$zindex--2: 200;
+$zindex--3: 300;
+$zindex--4: 400;
+$zindex--5: 500;
+$zindex--6: 600;
+$zindex--7: 700;
+$zindex--8: 800;

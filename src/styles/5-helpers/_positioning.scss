@@ -1,0 +1,237 @@
+//////////////////
+// Positioning //
+////////////////
+
+// Positioning
+//
+// Styleguide 6.3
+
+// Position
+//
+// Styleguide 6.3.1
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.static {
+  position: static;
+}
+
+
+// Display
+//
+// Styleguide 6.3.2
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+// Overflow
+//
+// Styleguide 6.3.3
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+// Centering
+//
+// <div class="aligner" style="background: #f5f5f5; width: 500px; height: 500px;">
+//   <div class="aligner-item aligner-item--top" style="background: #eaeaea; width: 100px; height: 20px;">Top</div>
+//   <div class="aligner-item" style="background: #eaeaea; width: 100px; height: 20px;">Centered</div>
+//   <div class="aligner-item aligner-item--bottom" style="background: #eaeaea; width: 100px; height: 20px;">Bottom</div>
+// </div>
+//
+// Styleguide 6.3.4
+
+.aligner {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.aligner-item {
+  @media (min-width: 90em) {
+    max-width: 50%;
+  }
+}
+
+.aligner-item--top {
+  align-self: flex-start;
+}
+
+.aligner-item--bottom {
+  align-self: flex-end;
+}
+
+.center {
+  display: table;
+  margin: 0 auto;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+
+// Hide
+//
+// Helper classes for hiding content from HTML5 boilerplate.
+// https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers
+//
+// Styleguide 6.3.5
+
+// Hide only visually, but have it available for screen readers:
+// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+// Extends the .visuallyhidden class to allow the element
+// to be focusable when navigated to via the keyboard:
+// https://www.drupal.org/node/897638
+.visuallyhidden.focusable
+.visuallyhidden.focusable {
+  &:active,
+  &:focus {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    width: auto;
+    height: auto;
+    margin: 0;
+  }
+}
+
+// Hide visually and from screen readers, but maintain layout
+.invisible {
+  visibility: hidden;
+}
+
+// Clearfix
+//
+// Styleguide 6.3.6
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+// Image Positioning
+//
+// Styleguide 6.3.7
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-top {
+  background-position: top;
+}
+
+.bg-right {
+  background-position: right;
+}
+
+.bg-bottom {
+  background-position: bottom;
+}
+
+.bg-left {
+  background-position: left;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+.bg-local {
+  background-attachment: local;
+}
+
+.img-cover {
+  object-fit: cover;
+}
+
+.img-contain {
+  object-fit: contain;
+}
+
+.img-fill {
+  object-fit: fill;
+}
+
+.img-scale-down {
+  object-fit: scale-down;
+}

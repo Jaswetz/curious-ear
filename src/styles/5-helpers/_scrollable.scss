@@ -1,0 +1,29 @@
+/////////////////
+// Scrollable //
+///////////////
+
+// Scrollables
+//
+// Use the scrollable utility when you need to provide scrolling within a
+// section of a page. For example, when the content within an element exceeds
+// either the width or height of the element, applying <code>.scrollable--y</code>
+// provides a vertical scrollbar, while <code>.scrollable--x</code> adds a horizontal
+// scrollbar.
+//
+// Styleguide 6.1
+
+.scrollable--y {
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 100%;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollable--x {
+  overflow: hidden;
+  overflow-x: auto;
+  max-width: 100%;
+
+  -webkit-overflow-scrolling: touch;
+}

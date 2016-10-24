@@ -1,0 +1,35 @@
+////////////
+// Colors //
+////////////
+
+// Colors
+//
+// markup:
+// <div style="background: #4183c4;" class="styleguide-color">$brand-linkBlue</div>
+// <div style="background: #999;" class="styleguide-color">$brand-lightGrey</div>
+// <div style="background: #666;" class="styleguide-color">$brand-medGrey</div>
+// <div style="background: #333;" class="styleguide-color">$brand-darkGrey</div>
+// <div style="background: #6CC644;" class="styleguide-color">$brand-green</div>
+// <div style="background: #BD2C00;" class="styleguide-color">$brand-red</div>
+// <div style="background: #f93;" class="styleguide-color">$brand-orange</div>
+//
+// Styleguide 1.0
+
+// Descrpitive Base Colors
+$color--white: #ffffff;
+$color--black: #0b0b0b;
+$color--grey--dark: #4b4b4b;
+$color--grey: #b1b1b1;
+$color--grey--light: #e4e4e4;
+$color--blue: #3372df;
+$color--teal: #33afdf;
+$color--green: #0f9d58;
+$color--purple: #b233df;
+$color--red: #cb4437;
+$color--orange: #f4b400;
+$color--yellow: #ffdb3a;
+
+// Theme Colors
+$primary-color: $color--blue;
+$secondary-color: $color--grey--light;
+$tertiary-color: $color--orange;

@@ -1,0 +1,73 @@
+// Splash Screen or Under construction Screen //
+.splash {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  text-align: center;
+
+  h1 {
+    font-size: 4.2rem;
+    line-height: 1.2;
+    color: $color--white;
+    border-top: $border-width solid $color--white;
+    border-bottom: $border-width solid $color--white;
+
+  }
+  p {
+    margin-bottom: $spacing--small;
+    > span {
+      display: block;
+      color: $color--white;
+    }
+    > span:first-child {
+      font-family: 'Playfair Display SC', serif;
+      line-height: 1;
+
+      @extend .h1;
+    }
+    > span:nth-child(2n) {
+      font-family: 'Cardo', serif;
+      font-weight: 400;
+      font-style: italic;
+
+      @extend .h2;
+    }
+    > span:last-child {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1;
+      text-transform: uppercase;
+
+      @extend .h1;
+    }
+  }
+  .winter {
+    font-family: 'Playfair Display SC', serif;
+    line-height: 2;
+    display: block;
+    padding-top: $spacing--small;
+    text-transform: uppercase;
+    color: $color--white;
+
+    @media (max-width: 50em) {
+      font-size: $text-size--large;
+    }
+  }
+}
+
+.img--ear {
+  z-index: 0;
+  width: 525px;
+  opacity: 0.4;
+  border: 0.125rem solid #00618c;
+  border-radius: 100%;
+
+  @media (max-width: 50em) {
+    width: 425px;
+  }
+
+  @media (max-width: 37.5em) {
+    width: 275px;
+  }
+}

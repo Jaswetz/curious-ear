@@ -1,0 +1,119 @@
+/////////////////
+// Typography //
+///////////////
+
+// Typography
+//
+// Styleguide 6.4
+
+// Text Length & Alignment
+//
+// Styleguide 6.4.1
+
+.optimal-length {
+  max-width: 70ch;
+}
+
+.text-align--center {
+  text-align: center;
+}
+
+.text-align--left {
+  text-align: left;
+}
+
+.text-align--right {
+  text-align: right;
+}
+
+// Styles & Transforms
+//
+// Styleguide 6.4.2
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.tracked {
+  letter-spacing: 4px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.list-style-none {
+  list-style-type: none;
+}
+
+.list-inline li {
+  display: inline;
+}
+
+.line-height {
+  line-height: 20px;
+}
+
+// Font Weights
+//
+// Styleguide 6.4.3
+
+.font-weight--thin {
+  font-weight: $font-weight--thin;
+}
+
+.font-weight--medium {
+  font-weight: $font-weight--medium;
+}
+
+.font-weight--bold {
+  font-weight: $font-weight--bold;
+}
+
+// Font Sizes
+//
+// Styleguide 6.4.4
+
+.text-size--xsmall {
+  font-size: $text-size--xsmall;
+}
+
+.text-size--small {
+  font-size: $text-size--small;
+}
+
+.text-size--large {
+  font-size: $text-size--large;
+}
+
+.text-size--xlarge {
+  font-size: $text-size--xlarge;
+}
+
+.text-size--xxlarge {
+  font-size: $text-size--xxlarge;
+}
+
+.text-size--giant {
+  font-size: $text-size--giant;
+}
+
+.text-size--mega {
+  font-size: $text-size--mega;
+}

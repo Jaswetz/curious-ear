@@ -1,0 +1,87 @@
+/////////////////
+// Typography //
+///////////////
+
+
+html {
+  font-size: 100%;
+
+  &.is-lineHeight {
+    background-image: url(http://basehold.it/i/30);
+  }
+
+  @media (max-width: 50em) {
+    font-size: 75%;
+  }
+
+  @media (max-width: 37.5em) {
+    font-size: 50%;
+  }
+
+
+  /* @media (min-width: 37.5em)  { @content ; } */
+  /* @media (max-width: 37.5em)  { @content ; } */
+}
+
+body {
+  line-height: $base__line-height;
+}
+
+// Resets margins
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+
+p {
+  font-size: $text-size;
+  margin-bottom: $spacing;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading--font-family;
+  font-weight: $heading--font-weight;
+  line-height: $heading--line-height;
+}
+
+h1,
+.h1 {
+  font-size: $text-size--mega;
+}
+
+h2,
+.h2 {
+  font-size: $text-size--giant;
+}
+
+h3,
+.h3 {
+  font-size: $text-size--xxlarge;
+}
+
+h4,
+.h4 {
+  font-size: $text-size--xlarge;
+}
+
+h5,
+.h5 {
+  font-size: $text-size--large;
+}
+
+h6,
+.h6 {
+  font-size: $text-size--big;
+}

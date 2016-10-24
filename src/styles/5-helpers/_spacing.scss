@@ -1,0 +1,439 @@
+/////////////
+// Spacing //
+////////////
+
+// Spacing
+//
+// Styleguide 6.2
+
+// Margins
+//
+// Styleguide 6.2.1
+
+// Margin Top
+
+.margin-top--none {
+  margin-top: 0;
+}
+
+.margin-top--xsmall {
+  margin-top: $spacing--xsmall;
+}
+
+.margin-top--small {
+  margin-top: $spacing--small;
+}
+
+.margin-top {
+  margin-top: $spacing;
+}
+
+.margin-top--large {
+  margin-top: $spacing--large;
+}
+
+.margin-top--xlarge {
+  margin-top: $spacing--xlarge;
+}
+
+// Margin Bottom
+
+.margin-bottom--none {
+  margin-bottom: 0;
+}
+
+.margin-bottom--xsmall {
+  margin-bottom: $spacing--xsmall;
+}
+
+.margin-bottom--small {
+  margin-bottom: $spacing--small;
+}
+
+.margin-bottom {
+  margin-bottom: $spacing;
+}
+
+.margin-bottom--large {
+  margin-bottom: $spacing--large;
+}
+
+.margin-bottom--xlarge {
+  margin-bottom: $spacing--xlarge;
+}
+
+// Margin Left
+
+.margin-left--none {
+  margin-left: 0;
+}
+
+.margin-left--xsmall {
+  margin-left: $spacing--xsmall;
+}
+
+.margin-left--small {
+  margin-left: $spacing--small;
+}
+
+.margin-left {
+  margin-left: $spacing;
+}
+
+.margin-left--large {
+  margin-left: $spacing--large;
+}
+
+.margin-left--xlarge {
+  margin-left: $spacing--xlarge;
+}
+
+// Margin Right
+
+.margin-right--none {
+  margin-right: 0;
+}
+
+.margin-right--xsmall {
+  margin-right: $spacing--xsmall;
+}
+
+.margin-right--small {
+  margin-right: $spacing--small;
+}
+
+.margin-right {
+  margin-right: $spacing;
+}
+
+.margin-right--large {
+  margin-right: $spacing--large;
+}
+
+.margin-right--xlarge {
+  margin-right: $spacing--xlarge;
+}
+
+// Margin Vertical
+
+.margin-vertical--none {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.margin-vertical--xsmall {
+  margin-top: $spacing--xsmall;
+  margin-bottom: $spacing--xsmall;
+}
+
+.margin-vertical--small {
+  margin-top: $spacing--small;
+  margin-bottom: $spacing--small;
+}
+
+.margin-vertical {
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+}
+
+.margin-vertical--large {
+  margin-top: $spacing--large;
+  margin-bottom: $spacing--large;
+}
+
+.margin-vertical--xlarge {
+  margin-top: $spacing--xlarge;
+  margin-bottom: $spacing--xlarge;
+}
+
+// Margin Horizontal
+
+.margin-horizontal--none {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.margin-horizontal--xsmall {
+  margin-right: $spacing--xsmall;
+  margin-left: $spacing--xsmall;
+}
+
+.margin-horizontal--small {
+  margin-right: $spacing--small;
+  margin-left: $spacing--small;
+}
+
+.margin-horizontal {
+  margin-right: $spacing;
+  margin-left: $spacing;
+}
+
+.margin-horizontal--large {
+  margin-right: $spacing--large;
+  margin-left: $spacing--large;
+}
+
+.margin-horizontal--xlarge {
+  margin-right: $spacing--xlarge;
+  margin-left: $spacing--xlarge;
+}
+
+// Margin Around
+
+.margin-around--none {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.margin-around--xsmall {
+  margin-top: $spacing--xsmall;
+  margin-right: $spacing--xsmall;
+  margin-bottom: $spacing--xsmall;
+  margin-left: $spacing--xsmall;
+}
+
+.margin-around--small {
+  margin-top: $spacing--small;
+  margin-right: $spacing--small;
+  margin-bottom: $spacing--small;
+  margin-left: $spacing--small;
+}
+
+.margin-around {
+  margin-top: $spacing;
+  margin-right: $spacing;
+  margin-bottom: $spacing;
+  margin-left: $spacing;
+}
+
+.margin-around--large {
+  margin-top: $spacing--large;
+  margin-right: $spacing--large;
+  margin-bottom: $spacing--large;
+  margin-left: $spacing--large;
+}
+
+.margin-around--xlarge {
+  margin-top: $spacing--xlarge;
+  margin-right: $spacing--xlarge;
+  margin-bottom: $spacing--xlarge;
+  margin-left: $spacing--xlarge;
+}
+
+// Padding
+//
+// Styleguide 6.2.2
+
+// Padding Top
+
+.padding-top--none {
+  padding-top: 0;
+}
+
+.padding-top--xsmall {
+  padding-top: $spacing--xsmall;
+}
+
+.padding-top--small {
+  padding-top: $spacing--small;
+}
+
+.padding-top {
+  padding-top: $spacing;
+}
+
+.padding-top--large {
+  padding-top: $spacing--large;
+}
+
+.padding-top--xlarge {
+  padding-top: $spacing--xlarge;
+}
+
+// Padding Bottom
+
+.padding-bottom--none {
+  padding-bottom: 0;
+}
+
+.padding-bottom--xsmall {
+  padding-bottom: $spacing--xsmall;
+}
+
+.padding-bottom--small {
+  padding-bottom: $spacing--small;
+}
+
+.padding-bottom {
+  padding-bottom: $spacing;
+}
+
+.padding-bottom--large {
+  padding-bottom: $spacing--large;
+}
+
+.padding-bottom--xlarge {
+  padding-bottom: $spacing--xlarge;
+}
+
+// Padding Left
+
+.padding-left--none {
+  padding-left: 0;
+}
+
+.padding-left--xsmall {
+  padding-left: $spacing--xsmall;
+}
+
+.padding-left--small {
+  padding-left: $spacing--small;
+}
+
+.padding-left {
+  padding-left: $spacing;
+}
+
+.padding-left--large {
+  padding-left: $spacing--large;
+}
+
+.padding-left--xlarge {
+  padding-left: $spacing--xlarge;
+}
+
+// Padding Right
+
+.padding-right--none {
+  padding-right: 0;
+}
+
+.padding-right--xsmall {
+  padding-right: $spacing--xsmall;
+}
+
+.padding-right--small {
+  padding-right: $spacing--small;
+}
+
+.padding-right {
+  padding-right: $spacing;
+}
+
+.padding-right--large {
+  padding-right: $spacing--large;
+}
+
+.padding-right--xlarge {
+  padding-right: $spacing--xlarge;
+}
+
+// Padding Vertical
+
+.padding-vertical--none {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.padding-vertical--xsmall {
+  padding-top: $spacing--xsmall;
+  padding-bottom: $spacing--xsmall;
+}
+
+.padding-vertical--small {
+  padding-top: $spacing--small;
+  padding-bottom: $spacing--small;
+}
+
+.padding-vertical {
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+}
+
+.padding-vertical--large {
+  padding-top: $spacing--large;
+  padding-bottom: $spacing--large;
+}
+
+.padding-vertical--xlarge {
+  padding-top: $spacing--xlarge;
+  padding-bottom: $spacing--xlarge;
+}
+
+// Padding Horizontal
+
+.padding-horizontal--none {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.padding-horizontal--xsmall {
+  padding-right: $spacing--xsmall;
+  padding-left: $spacing--xsmall;
+}
+
+.padding-horizontal--small {
+  padding-right: $spacing--small;
+  padding-left: $spacing--small;
+}
+
+.padding-horizontal {
+  padding-right: $spacing;
+  padding-left: $spacing;
+}
+
+.padding-horizontal--large {
+  padding-right: $spacing--large;
+  padding-left: $spacing--large;
+}
+
+.padding-horizontal--xlarge {
+  padding-right: $spacing--xlarge;
+  padding-left: $spacing--xlarge;
+}
+
+// Padding Around
+
+.padding-around--none {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+.padding-around--xsmall {
+  padding-top: $spacing--xsmall;
+  padding-right: $spacing--xsmall;
+  padding-bottom: $spacing--xsmall;
+  padding-left: $spacing--xsmall;
+}
+
+.padding-around--small {
+  padding-top: $spacing--small;
+  padding-right: $spacing--small;
+  padding-bottom: $spacing--small;
+  padding-left: $spacing--small;
+}
+
+.padding-around {
+  padding-top: $spacing;
+  padding-right: $spacing;
+  padding-bottom: $spacing;
+  padding-left: $spacing;
+}
+
+.padding-around--large {
+  padding-top: $spacing--large;
+  padding-right: $spacing--large;
+  padding-bottom: $spacing--large;
+  padding-left: $spacing--large;
+}
+
+.padding-around--xlarge {
+  padding-top: $spacing--xlarge;
+  padding-right: $spacing--xlarge;
+  padding-bottom: $spacing--xlarge;
+  padding-left: $spacing--xlarge;
+}
