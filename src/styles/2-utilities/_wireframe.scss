@@ -1,0 +1,33 @@
+// Wireframe
+@if $wireframe == true {
+    .is-wireframe {
+        section,
+        footer,
+        aside,
+        main,
+        nav,
+        article,
+        header,
+        .wire-block {
+            background-color: whitesmoke !important;
+
+            section,
+            footer,
+            aside,
+            main,
+            nav,
+            article,
+            header,
+            .wire-block {
+                background-color: rgba(#e8e8e8, .4) !important;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                color: silver;
+            }
+        }
+    }
+} // End if
