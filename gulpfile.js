@@ -17,6 +17,8 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var isArray = require('isarray');
 var htmlmin = require('gulp-html-minifier');
+var nunjucksRender = require('gulp-nunjucks-render');
+
 
 // For production or development?
 isProd = false;
