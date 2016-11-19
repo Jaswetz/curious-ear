@@ -28,14 +28,16 @@ sourceDir = './src/';
 destDir = './dest/';
 stylesSrc = sourceDir + 'styles/**/*.scss';
 stylesDest = destDir + 'css/';
-htmlSrc = sourceDir + '**/*.html';
+htmlSrc = sourceDir + '**/*.+(html|nunjucks)';
+htmlPageSrc = sourceDir + 'pages/' + '**/*.+(html|nunjucks)';
+htmlTemplatesSrc = sourceDir + 'templates';
 htmlDest = destDir;
 guideDest = destDir + 'styleguide/'
 imgSrc = sourceDir + 'images/**/*';
 imgDest = destDir + 'images';
 svgSrc = sourceDir + 'svg';
 svgDest = destDir + 'svg';
-svgGlob = '**/*.svg'
+svgGlob = '**/*.svg';
 
 // Define browser-sync ports
 browserPort = 3000;
@@ -92,23 +94,29 @@ gulp.task('clean', function() {
     return del([destDir]);
 });
 
-// Copy html to root directory
-gulp.task('copyHtml', function() {
-    gulp.src(htmlSrc)
-        .pipe(gulpif(isProd, htmlmin({
-            removeComments: true,
-            collapseWhitespace: true,
-            collapseBooleanAttributes: true,
-            removeAttributeQuotes: true,
-            removeRedundantAttributes: true,
-            removeEmptyAttributes: true,
-            removeScriptTypeAttributes: true,
-            removeStyleLinkTypeAttributes: true,
-        })))
-    .pipe(gulp.dest(htmlDest))
-        .pipe(gulpif(browserSync.active, browserSync.reload({
-            stream: true
-        })));
+// Templating using Nunjucks
+gulp.task('nunjucks', function() {
+  // Gets .html and .nunjucks files in pages
+  gulp.src( htmlPageSrc )
+  // Renders template with nunjucks
+  .pipe(nunjucksRender({
+      path: [htmlTemplatesSrc]
+    }))
+  .pipe(gulpif(isProd, htmlmin({
+    removeComments: true,
+    collapseWhitespace: true,
+    collapseBooleanAttributes: true,
+    removeAttributeQuotes: true,
+    removeRedundantAttributes: true,
+    removeEmptyAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+  })))
+  // output files in app folder
+  .pipe(gulp.dest(htmlDest))
+      .pipe(gulpif(browserSync.active, browserSync.reload({
+          stream: true
+      })));
 });
 
 // Move and compress images
@@ -144,6 +152,7 @@ gulp.task('svgSprite', function() {
         .pipe(notify({ message: 'SVG task complete' }));
 });
 
+
 // Style Guide
 gulp.task('styleguide:generate', function() {
   return gulp.src(stylesSrc)
@@ -171,7 +180,7 @@ gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
 
 // Files are automatically watched
 gulp.task('watch', ['browserSync'], function() {
-    gulp.watch(htmlSrc, ['copyHtml']);
+    gulp.watch(htmlSrc, ['nunjucks']);
     gulp.watch(stylesSrc, ['sass']);
     gulp.watch([stylesSrc], ['styleguide']);
 });
@@ -180,12 +189,12 @@ gulp.task('watch', ['browserSync'], function() {
 gulp.task('dev', ['clean', ], function(cb) {
     cb = cb || function() {};
     isProd = false;
-    return runSequence(['sass', 'copyHtml', 'imgProcess','svgSprite', 'styleguide'], 'watch', cb);
+    return runSequence(['sass', 'nunjucks', 'imgProcess','svgSprite', 'styleguide'], 'watch', cb);
 });
 
 // Gulp prod task
 gulp.task('prod', ['clean'], function(cb) {
     cb = cb || function() {};
     isProd = true;
-    return runSequence(['sass', 'imgProcess', 'svgSprite', 'copyHtml'], 'watch', cb);
+    return runSequence(['sass', 'imgProcess', 'svgSprite', 'nunjucks'], 'watch', cb);
 });

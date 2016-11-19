@@ -1,0 +1,16 @@
+<footer>
+  <span>© 2016 Curious Ear - Less Strangers. More Friends.</span>
+
+  <a href="https://www.instagram.com/curiousear/" target="__blank" class="footer__link">
+    <svg>
+        <use xlink:href="svg/sprite.svg#instagram"></use>
+    </svg>
+    <span class="visuallyhidden">Instagram</span>
+  </a>
+  <a href="#" class="footer__link">
+    <svg>
+      <use xlink:href="svg/sprite.svg#arrow--up"></use>
+    </svg>
+    <span class="visuallyhidden">Back to Top</span>
+  </a>
+</footer>

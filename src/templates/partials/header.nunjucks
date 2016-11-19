@@ -1,0 +1,12 @@
+<header>
+  <div class="header">
+    <h1 class="header__title"><a href="">Curious Ear</a></h1>
+    <nav class="header__actions">
+      <ul>
+        <li><a href="/where-and-when.html">Where and When</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
