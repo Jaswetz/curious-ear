@@ -1,0 +1,85 @@
+/////////////
+// Header //
+///////////
+
+.header {
+  padding: 0 $spacing;
+  text-align: center;
+  color: $color--purple;
+  border-bottom: 3px solid $color--purple;
+  background: $color--white;
+
+  @include mq(tablet) {
+    display: flex;
+  }
+
+  a {
+    font-family: $font-family--secondary;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color--grey--dark;
+  }
+
+  h1 {
+    @extend .h3;
+    /* font-weight: 200; */
+  }
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      display: inline;
+    }
+    a {
+      display: inline-block;
+      color: $color--purple;
+      margin-bottom: $spacing--small;
+
+      @include mq(tablet) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.header--cozy {
+  @include mq(tablet) {
+    align-items: center;
+  }
+}
+
+.header--cozy,
+.header__title {
+  @include mq(tablet) {
+    display: flex;
+  }
+}
+
+.header--cozy,
+.header__titles {
+  align-items: baseline;
+}
+
+.header__actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  @include mq(tablet) {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  a {
+    margin-left: $spacing--xsmall;
+
+    @include mq(tablet) {
+      margin-left: $spacing;
+    }
+  }
+}

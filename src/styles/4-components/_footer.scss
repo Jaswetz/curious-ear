@@ -1,0 +1,18 @@
+footer {
+  border-top: 3px solid $color--orange;
+  color: $base__font-color;
+
+  padding: $spacing;
+  text-align: center;
+  
+  .footer__link {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .footer__link > svg {
+    fill: $color--orange;
+    max-width: rem(25px);
+    max-height: rem(25px);
+  }
+}

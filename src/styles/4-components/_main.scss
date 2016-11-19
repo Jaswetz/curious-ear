@@ -1,0 +1,27 @@
+main {
+  margin-right: $spacing--xsmall;
+  margin-left: $spacing--xsmall;
+  padding: $spacing $spacing;
+  padding-top: $spacing--small;
+  padding-bottom: $spacing--small;
+  color: $color--grey--dark;
+  border: 3px solid $color--teal;
+  background: $color--grey--light;
+
+  @include mq(tablet) {
+    margin-right: $spacing;
+    margin-left: $spacing;
+    padding-right: $spacing--large;
+    padding-left: $spacing--large;
+  }
+  @include mq(desktop) {
+    max-width: 1080px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  h2 {
+    color: $color--teal;
+    //line-height: 1;
+  }
+}
