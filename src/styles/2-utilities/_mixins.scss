@@ -72,6 +72,9 @@
 
 // Breakpoints
 @mixin mq($point) {
+  @if $point == wide {
+    @media (min-width: 80em) { @content ; }
+ }
   @if $point == desktop {
     @media (min-width: 70em) { @content ; }
  }

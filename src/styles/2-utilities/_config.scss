@@ -2,6 +2,10 @@
 // Config //
 ///////////
 
+// Debug
+$wireframe: false;
+$baseline-grid: false;
+
 // Font Weights //
 $font-weight--thin: lighter;
 $font-weight--medium: normal;
@@ -24,11 +28,12 @@ $text-size--mega: 4.768em;
 $base__font-size: $text-size;
 $base__line-height: 1.875rem;
 $base__font-weight: $font-weight--medium;
+$base__font-color: $color--grey--dark;
 
 // Font Stacks //
 $font-family--mono: 'Playfair Display SC', serif;
-$font-family--primary: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-$font-family--secondary: 'Megrim', cursive;
+$font-family--primary: 'Lora', serif;
+$font-family--secondary: 'Source Sans Pro', sans-serif;
 
 // Headings //
 $heading--font-family: $font-family--secondary;
