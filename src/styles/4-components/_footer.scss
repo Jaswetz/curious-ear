@@ -1,18 +1,37 @@
 footer {
-  border-top: 3px solid $color--orange;
-  color: $base__font-color;
-
   padding: $spacing;
   text-align: center;
-  
+  color: $base__font-color;
+  border-top: 1px solid darken($color--grey--light, 2%);
+  background: $color--white;
+
   .footer__link {
     display: inline-block;
     vertical-align: middle;
   }
 
+  p {
+    max-width: 50rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   .footer__link > svg {
-    fill: $color--orange;
+    position: relative;
+    top: 2px;
     max-width: rem(25px);
     max-height: rem(25px);
+    margin-left: $spacing--xsmall;
+    transition: 0.3s all;
+    border: 2px solid $color--teal;
+    border-radius: 50%;
+
+    fill: $color--teal;
+
+    &:hover {
+      border-color: darken($color--teal, 15%);
+
+      fill: darken($color--teal, 15%);
+    }
   }
 }

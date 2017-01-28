@@ -2,47 +2,71 @@
 // Header //
 ///////////
 
-.header {
-  padding: 0 $spacing;
-  text-align: center;
-  color: $color--purple;
-  border-bottom: 3px solid $color--purple;
-  background: $color--white;
-
+.header__wrap {
   @include mq(tablet) {
     display: flex;
+    padding-right: $spacing--large;
+    padding-left: $spacing--large;
   }
+  @include mq(desktop) {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 
-  a {
+.header {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  padding: 0 $spacing;
+  text-align: center;
+  border-bottom: $border-width solid darken($color--grey--light, 2%);
+  background: $color--white;
+
+
+  h1 > a {
     font-family: $font-family--secondary;
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
-    color: $color--grey--dark;
+    color: $color--purple;
   }
 
   h1 {
+    margin-bottom: 0;
+
     @extend .h3;
-    /* font-weight: 200; */
   }
+}
 
-  nav {
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    li {
-      display: inline;
-    }
-    a {
-      display: inline-block;
-      color: $color--purple;
-      margin-bottom: $spacing--small;
+.header__actions {
+  ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+  li {
+    display: inline;
+  }
+  a {
+    font-size: $text-size--small;
+    font-weight: normal;
+    display: inline-block;
+    padding: $spacing--xsmall $spacing--small;
+    text-transform: uppercase;
+    color: $color--grey;
+    background: $color--white;
 
-      @include mq(tablet) {
-        margin-bottom: 0;
-      }
+    @include mq(tablet) {
+      margin-bottom: 0;
+    }
+    &:hover {
+      color: $color--teal;
+      border-color: $color--teal;
     }
   }
 }
@@ -81,5 +105,19 @@
     @include mq(tablet) {
       margin-left: $spacing;
     }
+  }
+}
+
+.where--active {
+  .where a {
+    color: $color--purple;
+    cursor: default;
+  }
+}
+
+.about--active {
+  .about a {
+    color: $color--purple;
+    cursor: default;
   }
 }

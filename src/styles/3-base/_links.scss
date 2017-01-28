@@ -1,1 +1,10 @@
+a {
+  font-weight: 500;
+  text-decoration: none;
+  color: $color--teal;
+  transition: .3s all;
 
+  &:hover {
+    color: darken($color--teal, 10%);
+  }
+}

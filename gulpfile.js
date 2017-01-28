@@ -73,7 +73,8 @@ function handleErrors(error) {
 // Autoprefixes browser prefixes
 gulp.task('sass', function() {
     return gulp.src(stylesSrc)
-        .pipe(gulpif(isProd, sourcemaps.init()))
+        .pipe(sourcemaps.init())
+        // .pipe(gulpif(isProd, sourcemaps.init()))
         .pipe(sass({
             sourceComments: isProd ? false : 'map',
             outputStyle: isProd ? 'compressed' : 'nested'
@@ -82,7 +83,8 @@ gulp.task('sass', function() {
         .pipe(postcss([autoprefixer({
             browsers: ['last 2 versions']
         })]))
-        .pipe(gulpif(isProd, sourcemaps.write('.')))
+        // .pipe(gulpif(isProd, sourcemaps.write('.')))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(stylesDest))
         .pipe(gulpif(browserSync.active, browserSync.reload({
             stream: true

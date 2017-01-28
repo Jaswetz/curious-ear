@@ -52,6 +52,12 @@ p {
   max-width: rem(800px);
 }
 
+p,
+ul,
+li {
+    color: lighten($color--black, 35%);
+}
+
 h1,
 h2,
 h3,
@@ -66,16 +72,19 @@ h6 {
 h1,
 .h1 {
   font-size: $text-size--mega;
+  line-height: $base__line-height * 3;
 }
 
 h2,
 .h2 {
   font-size: $text-size--giant;
+  margin-bottom: $spacing;
 }
 
 h3,
 .h3 {
   font-size: $text-size--xxlarge;
+  margin-bottom: $spacing--small;
 }
 
 h4,

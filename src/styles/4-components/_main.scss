@@ -1,11 +1,10 @@
 main {
   margin-right: $spacing--xsmall;
   margin-left: $spacing--xsmall;
-  padding: $spacing $spacing;
-  padding-top: $spacing--small;
-  padding-bottom: $spacing--small;
+  padding-top: $spacing;
+  padding-right: $spacing;
+  padding-left: $spacing;
   color: $color--grey--dark;
-  border: 3px solid $color--teal;
   background: $color--grey--light;
 
   @include mq(tablet) {
@@ -15,13 +14,22 @@ main {
     padding-left: $spacing--large;
   }
   @include mq(desktop) {
-    max-width: 1080px;
+    max-width: 1280px;
     margin-right: auto;
     margin-left: auto;
   }
 
   h2 {
-    color: $color--teal;
-    //line-height: 1;
+    color: $color--purple;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.intro {
+  .intro--g:first-child {
+    width: 10%;
   }
 }
