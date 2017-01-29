@@ -20,11 +20,41 @@
             <div class="media__body">
               <h4 class="event__title">Spaceness 2017</h4>
               <span class="event__date">February 24-26, 2017</span>
-              <p>SPACENESS is a celebration of time, space and the unknown through experimental art, media and performance. Each year SPACENESS takes over the Sou'Wester Lodge in Seaview, WA, as well as the adjacent forest, seashore and wild spaces. Curious Ear will be there to help share stories and connect people. Come check it out!</p>
+              <p><a href="http://spaceness.com/">SPACENESS</a> is a celebration of time, space and the unknown through experimental art, media and performance. Each year SPACENESS takes over the Sou'Wester Lodge in Seaview, WA, as well as the adjacent forest, seashore and wild spaces. Curious Ear will be there to help share stories and connect people. Come check it out!</p>
             </div>
           </div>
           <div class="event__map">
                   <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJBwsWg2ltk1QR3iEQjXb17G8&key=AIzaSyAVIKNiU-Uhz7nkiH55FkEtjsjQpiPSiw8" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="event">
+          <div class="media">
+            <div class="media__figure">
+              <img src="images/img--jnames.jpg" alt="The J Names improv team.">
+            </div>
+            <div class="media__body">
+              <h4 class="event__title">J Names at the Siren Theater</h4>
+              <span class="event__date">January 20, 2017</span>
+              <p><a href="http://jnamescomedy.com/">J Names</a> are improvisers from Portland's theaters and groups came together in a self-proclaimed supergroup. These performers are the real thing. See them at <a href="http://www.sirentheater.com/">Siren Theater</a>, get tickets now on <a href="https://www.eventbrite.com/e/j-names-improv-society-tickets-30907012707">Eventbrite</a></p>
+            </div>
+          </div>
+          <div class="event__map">
+                  <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Siren%20Theater&key=AIzaSyCiajXzB5WdVIYAm1Ft_Gs4EwDpv7H0z7I" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="event">
+          <div class="media">
+            <div class="media__figure">
+              <img src="images/img--resolutionnw.jpg" alt="Resolutions Northwest talking into a large ear.">
+            </div>
+            <div class="media__body">
+              <h4 class="event__title"> Resolutions Northwest</h4>
+              <span class="event__date">January 20, 2017</span>
+              <p><a href="https://resolutionsnorthwest.org/">Resolutions Northwest</a> facilitates honest dialogue to resolve conflict and advance racial and social justice. We envision inclusive and just communities in which people connect across differences and equitably share opportunities to thrive.</p>
+            </div>
+          </div>
+          <div class="event__map">
+                  <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=%20%20Resolutions%20Northwest&key=AIzaSyAgFHoWFxOevk4BOi61ed_ZP-wNW4FgQqo" allowfullscreen></iframe>
           </div>
         </div>
     </main>
