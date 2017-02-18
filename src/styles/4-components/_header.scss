@@ -115,6 +115,13 @@
   }
 }
 
+.featured--active {
+  .featured a {
+    color: $color--purple;
+    cursor: default;
+  }
+}
+
 .about--active {
   .about a {
     color: $color--purple;

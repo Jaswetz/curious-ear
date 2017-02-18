@@ -1,0 +1,45 @@
+<!-- contact.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+  <div class="featured--active">
+    {% include "partials/header.nunjucks" %}
+  </div>
+    <main>
+      <div class="page-intro">
+        <h2>Featured</h2>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fringilla nisi magna, accumsan hendrerit mi pharetra sed. Nunc maximus ornare leo, eget vestibulum quam imperdiet vel.
+      </div>
+<audio controls="controls">
+  Your browser does not support the <code>audio</code> element.
+  <source src="https://storage.googleapis.com/storybox-pdx/e1156557-1770-420d-91fc-3189c1596d19.mp3" preload="auto">
+</audio>
+<audio controls="controls">
+  Your browser does not support the <code>audio</code> element.
+  <source src="https://storage.googleapis.com/storybox-pdx/fda4c1b4-ee0e-44f1-97cf-bcc3d24ab3b1.mp3" preload="auto">
+</audio>
+<audio controls="controls">
+  Your browser does not support the <code>audio</code> element.
+  <source src="https://storage.googleapis.com/storybox-pdx/eeef70c0-13d4-4579-b2af-b2d5e536a3ce.mp3" preload="auto">
+</audio>
+<audio controls="controls">
+  Your browser does not support the <code>audio</code> element.
+  <source src="https://storage.googleapis.com/storybox-pdx/a80910b2-61ce-4f1e-bd1e-e7d6f5c7352a.mp3" preload="auto">
+</audio>
+<audio controls="controls">
+  Your browser does not support the <code>audio</code> element.
+  <source src="https://storage.googleapis.com/storybox-pdx/619dfcbd-d55b-4e25-9a81-0b94375d78c4.mp3" preload="auto">
+</audio>
+
+    </main>
+  {% include "partials/footer.nunjucks" %}
+
+  <script src="js/howler.min.js"></script>
+  <script>
+  var sound = new Howl({
+    src: ['https://storage.googleapis.com/storybox-pdx/e1156557-1770-420d-91fc-3189c1596d19.mp3']
+  });
+
+  sound.play();
+  </script>
+{% endblock %}

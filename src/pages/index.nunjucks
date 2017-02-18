@@ -19,6 +19,9 @@
                         <li>
                             <a href="about.html">About Us</a>
                         </li>
+                        <li>
+                            <a href="featured.html">Featured</a>
+                        </li>
                         <li class="arrow--down">
                             <a href="#whatitis">
                                 <svg>
