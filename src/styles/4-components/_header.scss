@@ -20,10 +20,13 @@
   z-index: 100;
   top: 0;
   width: 100%;
-  padding: 0 $spacing;
   text-align: center;
   border-bottom: $border-width solid darken($color--grey--light, 2%);
   background: $color--white;
+  @include mq(phablet){
+    padding: 0 $spacing;
+
+  }
 
 
   h1 > a {
@@ -49,8 +52,13 @@
     list-style: none;
     text-align: center;
   }
-  li {
-    display: inline;
+  @include mq(phablet) {
+    .menu-link {
+      display: none;
+    }
+    li {
+      display: inline;
+    }
   }
   a {
     font-size: $text-size--small;
@@ -68,6 +76,40 @@
       color: $color--teal;
       border-color: $color--teal;
     }
+  }
+}
+
+.menu-link {
+  display: block;
+  padding-top: $spacing--small;
+  padding-bottom: $spacing--small;
+}
+
+@include mq(mobileonly) {
+  .header {
+
+    .header__actions {
+      display: none;
+    }
+
+    .header__actions.active {
+      display: block;
+    }
+
+    .header__actions {
+      li {
+        border-top: $border-width solid darken($color--grey--light, 2%);
+        a {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include mq(phablet) {
+  .menu-link {
+    display: none;
   }
 }
 
@@ -90,10 +132,11 @@
 }
 
 .header__actions {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
+  @include mq(phablet) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   @include mq(tablet) {
     flex: 1;
     justify-content: flex-end;
