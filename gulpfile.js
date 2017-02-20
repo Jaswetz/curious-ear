@@ -18,6 +18,7 @@ var browserSync = require('browser-sync');
 var isArray = require('isarray');
 var htmlmin = require('gulp-html-minifier');
 var nunjucksRender = require('gulp-nunjucks-render');
+var fs = require('fs');
 
 
 // For production or development?
@@ -28,6 +29,8 @@ sourceDir = './src/';
 destDir = './dest/';
 stylesSrc = sourceDir + 'styles/**/*.scss';
 stylesDest = destDir + 'css/';
+audioSrc = sourceDir + 'audio/*.mp4';
+audioDest = destDir + 'audio';
 htmlSrc = sourceDir + '**/*.+(html|nunjucks)';
 htmlPageSrc = sourceDir + 'pages/' + '**/*.+(html|nunjucks)';
 htmlTemplatesSrc = sourceDir + 'templates';
@@ -121,6 +124,12 @@ gulp.task('nunjucks', function() {
       })));
 });
 
+gulp.task('audioTransfer', function(){
+    return gulp.src(audioSrc)
+        .pipe(gulp.dest(audioDest));
+
+});
+
 // Move and compress images
 gulp.task('imgProcess', function() {
     gulp.src(imgSrc)
@@ -191,12 +200,12 @@ gulp.task('watch', ['browserSync'], function() {
 gulp.task('dev', ['clean', ], function(cb) {
     cb = cb || function() {};
     isProd = false;
-    return runSequence(['sass', 'nunjucks', 'imgProcess','svgSprite', 'styleguide'], 'watch', cb);
+    return runSequence(['sass', 'nunjucks', 'imgProcess', 'audioTransfer', 'svgSprite', 'styleguide'], 'watch', cb);
 });
 
 // Gulp prod task
 gulp.task('prod', ['clean'], function(cb) {
     cb = cb || function() {};
     isProd = true;
-    return runSequence(['sass', 'imgProcess', 'svgSprite', 'nunjucks'], 'watch', cb);
+    return runSequence(['sass', 'imgProcess', 'audioTransfer', 'svgSprite', 'nunjucks'], 'watch', cb);
 });
