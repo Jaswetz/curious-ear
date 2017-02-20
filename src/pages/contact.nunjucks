@@ -1,0 +1,37 @@
+<!-- contact.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+  {% include "partials/header.nunjucks" %}
+    <main>
+      <h2>Contact</h2>
+      <form>
+        <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+        <p>
+          <label>
+            <span>Name: </span>
+            <input type="text" name="username" required />
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+        </p>
+        <p>
+          <label>
+            <span>Email: </span>
+            <input type="email" name="email" required />
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+        </p>
+        <p>
+          <label>
+            <span>Message:</span>
+            <textarea placeholder="Tell us. We're listening!" required></textarea>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+        </p>
+        <p>
+        <button name="submit" type="submit" id="contact-submit">Send Email</button>
+        </p>
+      </form>
+    </main>
+  {% include "partials/footer.nunjucks" %}
+{% endblock %}

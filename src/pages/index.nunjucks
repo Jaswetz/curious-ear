@@ -1,0 +1,71 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+    <!--{% include "partials/header.nunjucks" %}-->
+    <section class="hero">
+        <div class="hero__image">
+            <img src="images/img--earmouth.jpg" alt="Banner Image">
+        </div>
+        <div class="hero__content">
+            <div class="hero__content__inner">
+                <h2>This is Curious Ear.</h2>
+                <p>A place to be heard, listen, and connect, with someone in another part of the city</p>
+                <nav class="header__actions">
+                    <ul>
+                        <li>
+                            <a href="where-and-when.html">Find Us</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About Us</a>
+                        </li>
+                        <li>
+                            <a href="featured.html">Featured</a>
+                        </li>
+                        <li class="arrow--down">
+                            <a href="#whatitis">
+                                <svg>
+                                    <use xlink:href="svg/sprite.svg#arrow--down"></use>
+                                </svg>
+                                more
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <main class="home">
+        <section id="whatitis">
+            <div class="page-intro">
+                <h3>WHAT IS THIS?</h3>
+                <p>This giant ear records what you say. It could be a story, a new idea, a secret, a joke, or something you’ve been thinking a lot about.</p>
+            </div>
+            <div class="page-intro">
+                <h3>AND THEN WHAT?</h3>
+                <p>What you share here can be heard by someone—anyone—at a giant mouth located somewhere across the city.</p>
+            </div>
+            <div class="page-intro">
+                <h3>WHY?</h3>
+                <p>So more people can be heard and listen to each other. People who may otherwise never meet or exchange perspectives because of differing upbringings, backgrounds, worldviews, interests, lifestyles … People like:</p>
+                <ul>
+                    <li>Kids at elementary schools sharing and listening to elderly folks in nursing homes…</li>
+                    <li>Business travelers at hotels hearing from those living in homeless shelters…</li>
+                    <li>Republicans with democrats…</li>
+                </ul>
+                <p>Because the more we listen, the more we understand. Fewer strangers, more friends. Less fear, more love.</p>
+            </div>
+            <div class="page-intro">
+                <h3>WHO’S BEHIND THIS?</h3>
+                <p>A group of coders, writers, artists and designers. We got together in the fall of 2016 with a simple idea of getting people talk to and listen to each other more. We started with the ear, and then the mouth … and we have more ideas brewing.</p>
+            </div>
+            <div class="page-intro">
+                <h3>WHERE WILL THIS GO NEXT?</h3>
+                <p>Well, the ear and mouth will move around quite a lot … for now. We may find more permanent installations as the project grows. Right now, we’re working on getting grant funding as we seek new places for the ear and mouth to visit, and as we build
+                    more structures. If you have ideas, want to support, or ask us a question
+                    <a href="mailto:hello@curiousear.com">send us an email</a>.</p>
+            </div>
+        </section>
+    </main>
+    {% include "partials/footer.nunjucks" %}
+{% endblock %}

@@ -17,6 +17,9 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var isArray = require('isarray');
 var htmlmin = require('gulp-html-minifier');
+var nunjucksRender = require('gulp-nunjucks-render');
+var fs = require('fs');
+
 
 // For production or development?
 isProd = false;
@@ -26,14 +29,18 @@ sourceDir = './src/';
 destDir = './dest/';
 stylesSrc = sourceDir + 'styles/**/*.scss';
 stylesDest = destDir + 'css/';
-htmlSrc = sourceDir + '**/*.html';
+audioSrc = sourceDir + 'audio/*.mp4';
+audioDest = destDir + 'audio';
+htmlSrc = sourceDir + '**/*.+(html|nunjucks)';
+htmlPageSrc = sourceDir + 'pages/' + '**/*.+(html|nunjucks)';
+htmlTemplatesSrc = sourceDir + 'templates';
 htmlDest = destDir;
 guideDest = destDir + 'styleguide/'
 imgSrc = sourceDir + 'images/**/*';
 imgDest = destDir + 'images';
 svgSrc = sourceDir + 'svg';
 svgDest = destDir + 'svg';
-svgGlob = '**/*.svg'
+svgGlob = '**/*.svg';
 
 // Define browser-sync ports
 browserPort = 3000;
@@ -69,7 +76,8 @@ function handleErrors(error) {
 // Autoprefixes browser prefixes
 gulp.task('sass', function() {
     return gulp.src(stylesSrc)
-        .pipe(gulpif(isProd, sourcemaps.init()))
+        .pipe(sourcemaps.init())
+        // .pipe(gulpif(isProd, sourcemaps.init()))
         .pipe(sass({
             sourceComments: isProd ? false : 'map',
             outputStyle: isProd ? 'compressed' : 'nested'
@@ -78,7 +86,8 @@ gulp.task('sass', function() {
         .pipe(postcss([autoprefixer({
             browsers: ['last 2 versions']
         })]))
-        .pipe(gulpif(isProd, sourcemaps.write('.')))
+        // .pipe(gulpif(isProd, sourcemaps.write('.')))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(stylesDest))
         .pipe(gulpif(browserSync.active, browserSync.reload({
             stream: true
@@ -90,23 +99,35 @@ gulp.task('clean', function() {
     return del([destDir]);
 });
 
-// Copy html to root directory
-gulp.task('copyHtml', function() {
-    gulp.src(htmlSrc)
-        .pipe(gulpif(isProd, htmlmin({
-            removeComments: true,
-            collapseWhitespace: true,
-            collapseBooleanAttributes: true,
-            removeAttributeQuotes: true,
-            removeRedundantAttributes: true,
-            removeEmptyAttributes: true,
-            removeScriptTypeAttributes: true,
-            removeStyleLinkTypeAttributes: true,
-        })))
-    .pipe(gulp.dest(htmlDest))
-        .pipe(gulpif(browserSync.active, browserSync.reload({
-            stream: true
-        })));
+// Templating using Nunjucks
+gulp.task('nunjucks', function() {
+  // Gets .html and .nunjucks files in pages
+  gulp.src( htmlPageSrc )
+  // Renders template with nunjucks
+  .pipe(nunjucksRender({
+      path: [htmlTemplatesSrc]
+    }))
+  .pipe(gulpif(isProd, htmlmin({
+    removeComments: true,
+    collapseWhitespace: true,
+    collapseBooleanAttributes: true,
+    removeAttributeQuotes: true,
+    removeRedundantAttributes: true,
+    removeEmptyAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+  })))
+  // output files in app folder
+  .pipe(gulp.dest(htmlDest))
+      .pipe(gulpif(browserSync.active, browserSync.reload({
+          stream: true
+      })));
+});
+
+gulp.task('audioTransfer', function(){
+    return gulp.src(audioSrc)
+        .pipe(gulp.dest(audioDest));
+
 });
 
 // Move and compress images
@@ -142,6 +163,7 @@ gulp.task('svgSprite', function() {
         .pipe(notify({ message: 'SVG task complete' }));
 });
 
+
 // Style Guide
 gulp.task('styleguide:generate', function() {
   return gulp.src(stylesSrc)
@@ -169,7 +191,7 @@ gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
 
 // Files are automatically watched
 gulp.task('watch', ['browserSync'], function() {
-    gulp.watch(htmlSrc, ['copyHtml']);
+    gulp.watch(htmlSrc, ['nunjucks']);
     gulp.watch(stylesSrc, ['sass']);
     gulp.watch([stylesSrc], ['styleguide']);
 });
@@ -178,12 +200,12 @@ gulp.task('watch', ['browserSync'], function() {
 gulp.task('dev', ['clean', ], function(cb) {
     cb = cb || function() {};
     isProd = false;
-    return runSequence(['sass', 'copyHtml', 'imgProcess','svgSprite', 'styleguide'], 'watch', cb);
+    return runSequence(['sass', 'nunjucks', 'imgProcess', 'audioTransfer', 'svgSprite', 'styleguide'], 'watch', cb);
 });
 
 // Gulp prod task
 gulp.task('prod', ['clean'], function(cb) {
     cb = cb || function() {};
     isProd = true;
-    return runSequence(['sass', 'imgProcess', 'svgSprite', 'copyHtml'], 'watch', cb);
+    return runSequence(['sass', 'imgProcess', 'audioTransfer', 'svgSprite', 'nunjucks'], 'watch', cb);
 });

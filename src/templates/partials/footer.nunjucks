@@ -1,0 +1,16 @@
+<footer>
+    <p>© 2017 Curious Ear - Less Strangers. More Friends.
+        <a href="#" class="footer__link">
+            <svg>
+                <use xlink:href="svg/sprite.svg#arrow--up"></use>
+            </svg>
+            <span class="visuallyhidden">Back to Top</span>
+        </a>
+    </p>
+
+    <p>Connect with us on
+        <a href="https://www.instagram.com/curiousear/" target="__blank" class="footer__link">Instagram</a>
+        or send us an email at
+        <a href="mailto:hello@curiousear.com">hello@curiousear.com</a>
+    </p>
+</footer>

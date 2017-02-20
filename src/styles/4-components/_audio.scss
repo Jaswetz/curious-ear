@@ -1,0 +1,9 @@
+.audio {
+  &__item {
+    display: flex;
+    justify-content: center;
+  }
+  audio {
+    margin-top: $spacing--small;
+  }
+}

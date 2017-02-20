@@ -1,0 +1,231 @@
+// Grid
+
+// Styleguide does not inherit box-sizing.
+.ng-binding {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// Main Grid Styles
+
+.g {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+.g-cell {
+  flex: 1;
+}
+
+// Grid Style Modifiers
+
+// With Gutters
+.g--gutters {
+  margin: (-$spacing) 0 $spacing (-$spacing);
+
+  > .g-cell {
+    padding: $spacing 0 0 $spacing;
+  }
+}
+
+// Flex Cells
+
+.g--flex {
+  > .g-cell {
+    display: flex;
+  }
+}
+
+// Alignment per row
+.g--top {
+  align-items: flex-start;
+}
+.g--bottom {
+  align-items: flex-end;
+}
+.g--center {
+  align-items: center;
+}
+.g--justifyCenter {
+  justify-content: center;
+}
+.g--autoSize {
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+      -ms-flex: none;
+          flex: none;
+}
+
+// Alignment per cell
+.g-cell--top {
+  align-self: flex-start;
+}
+.g-cell--bottom {
+  align-self: flex-end;
+}
+.g-cell--center {
+  align-self: center;
+}
+
+// Section Classes
+.g--fit > .g-cell {
+  flex: 1;
+}
+.g--full > .g-cell {
+  flex: 0 0 100%;
+}
+.g--1of2 > .g-cell {
+  flex: 0 0 50%;
+}
+.g--1of3 > .g-cell {
+  flex: 0 0 33.3333%;
+}
+.g--1of4 > .g-cell {
+  flex: 0 0 25%;
+}
+
+// Cell Widths
+.g-cell--full {
+  width: 100%;
+}
+
+.g-cell--1of2,
+.g-cell--full {
+  flex: none;
+}
+
+.g-cell--1of2 {
+  width: 50%;
+}
+
+.g-cell--1of3 {
+  width: 33.3333%;
+}
+
+.g-cell--1of3,
+.g-cell--2of3 {
+  flex: none;
+}
+
+.g-cell--2of3 {
+  width: 66.6667%;
+}
+
+.g-cell--1of4 {
+  width: 25%;
+}
+
+.g-cell--1of4,
+.g-cell--3of4 {
+  flex: none;
+}
+
+.g-cell--3of4 {
+  width: 75%;
+}
+
+// Small Screens
+@include mq(mobileonly) {
+  .g--fit--small > .g-cell {
+    flex: 1;
+  }
+  .g--full--small > .g-cell {
+    flex: 0 0 100%;
+  }
+  .g--1of2--small > .g-cell {
+    flex: 0 0 50%;
+  }
+  .g--1of3--small > .g-cell {
+    flex: 0 0 33.3333%;
+  }
+  .g--1of4--small > .g-cell {
+    flex: 0 0 25%;
+  }
+}
+
+// Medium Screens
+@include mq(phablet) {
+  .g--fit--medium > .g-cell {
+    flex: 1;
+  }
+  .g--full--medium > .g-cell {
+    flex: 0 0 100%;
+  }
+  .g--1of2--medium > .g-cell {
+    flex: 0 0 50%;
+  }
+  .g--1of3--medium > .g-cell {
+    flex: 0 0 33.3333%;
+  }
+  .g--1of4--medium > .g-cell {
+    flex: 0 0 25%;
+  }
+}
+
+// Large Screens
+@include mq(tablet) {
+  .g--fit--large > .g-cell {
+    flex: 1;
+  }
+  .g--full--large > .g-cell {
+    flex: 0 0 100%;
+  }
+  .g--1of2--large > .g-cell {
+    flex: 0 0 50%;
+  }
+  .g--1of3--large > .g-cell {
+    flex: 0 0 33.3333%;
+  }
+  .g--1of4--large > .g-cell {
+    flex: 0 0 25%;
+  }
+}
+
+//  xLarge Screens
+@include mq(desktop) {
+  .g--fit--xlarge > .g-cell {
+    flex: 1;
+  }
+  .g--full--xlarge > .g-cell {
+    flex: 0 0 100%;
+  }
+  .g--1of2--xlarge > .g-cell {
+    flex: 0 0 50%;
+  }
+  .g--1of3--xlarge > .g-cell {
+    flex: 0 0 33.3333%;
+  }
+  .g--1of4--xlarge > .g-cell {
+    flex: 0 0 25%;
+  }
+}
+
+//  xxLarge Screens
+@include mq(wide) {
+  .g--fit--xxlarge > .g-cell {
+    flex: 1;
+  }
+  .g--full--xxlarge > .g-cell {
+    flex: 0 0 100%;
+  }
+  .g--1of2--xxlarge > .g-cell {
+    flex: 0 0 50%;
+  }
+  .g--1of3--xxlarge > .g-cell {
+    flex: 0 0 33.3333%;
+  }
+  .g--1of4--xxlarge > .g-cell {
+    flex: 0 0 25%;
+  }
+}
+
+// @todo fix nexting cells: https://philipwalton.github.io/solved-by-flexbox/demos/grids/

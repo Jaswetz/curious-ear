@@ -1,0 +1,173 @@
+/////////////
+// Header //
+///////////
+
+.header__wrap {
+  @include mq(tablet) {
+    display: flex;
+    padding-right: $spacing--large;
+    padding-left: $spacing--large;
+  }
+  @include mq(desktop) {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.header {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  border-bottom: $border-width solid darken($color--grey--light, 2%);
+  background: $color--white;
+  @include mq(phablet){
+    padding: 0 $spacing;
+
+  }
+
+
+  h1 > a {
+    font-family: $font-family--secondary;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color--purple;
+  }
+
+  h1 {
+    margin-bottom: 0;
+
+    @extend .h3;
+  }
+}
+
+.header__actions {
+  ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+  @include mq(phablet) {
+    .menu-link {
+      display: none;
+    }
+    li {
+      display: inline;
+    }
+  }
+  a {
+    font-size: $text-size--small;
+    font-weight: normal;
+    display: inline-block;
+    padding: $spacing--xsmall $spacing--small;
+    text-transform: uppercase;
+    color: $color--grey;
+    background: $color--white;
+
+    @include mq(tablet) {
+      margin-bottom: 0;
+    }
+    &:hover {
+      color: $color--teal;
+      border-color: $color--teal;
+    }
+  }
+}
+
+.menu-link {
+  display: block;
+  padding-top: $spacing--small;
+  padding-bottom: $spacing--small;
+}
+
+@include mq(mobileonly) {
+  .header {
+
+    .header__actions {
+      display: none;
+    }
+
+    .header__actions.active {
+      display: block;
+    }
+
+    .header__actions {
+      li {
+        border-top: $border-width solid darken($color--grey--light, 2%);
+        a {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include mq(phablet) {
+  .menu-link {
+    display: none;
+  }
+}
+
+.header--cozy {
+  @include mq(tablet) {
+    align-items: center;
+  }
+}
+
+.header--cozy,
+.header__title {
+  @include mq(tablet) {
+    display: flex;
+  }
+}
+
+.header--cozy,
+.header__titles {
+  align-items: baseline;
+}
+
+.header__actions {
+  @include mq(phablet) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @include mq(tablet) {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  a {
+    margin-left: $spacing--xsmall;
+
+    @include mq(tablet) {
+      margin-left: $spacing;
+    }
+  }
+}
+
+.where--active {
+  .where a {
+    color: $color--purple;
+    cursor: default;
+  }
+}
+
+.featured--active {
+  .featured a {
+    color: $color--purple;
+    cursor: default;
+  }
+}
+
+.about--active {
+  .about a {
+    color: $color--purple;
+    cursor: default;
+  }
+}
