@@ -1,10 +1,14 @@
 .page-intro {
-  margin-right: -$spacing--large;
+  margin-right: -2.5rem;
+  margin-left: -2.5rem;
   margin-bottom: $spacing--large;
-  margin-left: -$spacing--large;
   padding: $spacing $spacing--large;
   border-bottom: 1px solid darken($color--grey--light, 2%);
-  background: white;
+  background: $color--white;
+
+  @include mq(mobileonly) {
+    margin-top: $spacing;
+  }
 
   @include mq(desktop) {
     margin-right: 0;
