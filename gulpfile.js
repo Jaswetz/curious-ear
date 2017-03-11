@@ -17,6 +17,7 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var isArray = require('isarray');
 var htmlmin = require('gulp-html-minifier');
+var uglify = require('gulp-uglify');
 var nunjucksRender = require('gulp-nunjucks-render');
 
 
@@ -28,10 +29,12 @@ sourceDir = './src/';
 destDir = './dest/';
 stylesSrc = sourceDir + 'styles/**/*.scss';
 stylesDest = destDir + 'css/';
+jsSrc = sourceDir + '**/*.js';
 htmlSrc = sourceDir + '**/*.+(html|nunjucks)';
 htmlPageSrc = sourceDir + 'pages/' + '**/*.+(html|nunjucks)';
 htmlTemplatesSrc = sourceDir + 'templates';
 htmlDest = destDir;
+jsDest = destDir;
 guideDest = destDir + 'styleguide/'
 imgSrc = sourceDir + 'images/**/*';
 imgDest = destDir + 'images';
@@ -90,6 +93,14 @@ gulp.task('sass', function() {
             stream: true
         })));
 });
+
+// Move and compress JavaScript
+gulp.task('js', function() {
+    gulp.src(jsSrc)
+        .pipe(gulpif(isProd, uglify()))
+        .pipe(gulp.dest(jsDest))
+});
+
 
 // Clean up desitination directory
 gulp.task('clean', function() {
@@ -185,18 +196,19 @@ gulp.task('watch', ['browserSync'], function() {
     gulp.watch(htmlSrc, ['nunjucks']);
     gulp.watch(stylesSrc, ['sass']);
     gulp.watch([stylesSrc], ['styleguide']);
+    gulp.watch([jsSrc], ['js']);
 });
 
 // Gulp development task
 gulp.task('dev', ['clean', ], function(cb) {
     cb = cb || function() {};
     isProd = false;
-    return runSequence(['sass', 'nunjucks', 'imgProcess','svgSprite', 'styleguide'], 'watch', cb);
+    return runSequence(['sass', 'nunjucks', 'js', 'imgProcess','svgSprite', 'styleguide'], 'watch', cb);
 });
 
 // Gulp prod task
 gulp.task('prod', ['clean'], function(cb) {
     cb = cb || function() {};
     isProd = true;
-    return runSequence(['sass', 'imgProcess', 'svgSprite', 'nunjucks'], 'watch', cb);
+    return runSequence(['sass', 'js', 'imgProcess', 'svgSprite', 'nunjucks'], 'watch', cb);
 });
