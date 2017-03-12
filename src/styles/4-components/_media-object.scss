@@ -20,7 +20,7 @@
       margin-right: $spacing;
 
       > img {
-        width: rem(130px);
+        width: rem(250px);
       }
     }
     &__body {
@@ -30,10 +30,22 @@
 }
 
 .media {
-
   @include mq(phablet) {
     align-items: flex-start;
-
-
   }
+}
+
+.media--reverse {
+    .media__body {
+      text-align: right;
+  }
+   @include mq(phablet) {
+    flex-direction: row-reverse;
+    .media__figure {
+      margin-right: 0;
+      margin-left: $spacing;
+
+    }
+
+  } 
 }
