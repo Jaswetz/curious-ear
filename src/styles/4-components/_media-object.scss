@@ -36,10 +36,10 @@
 }
 
 .media--reverse {
-    .media__body {
-      text-align: right;
-  }
    @include mq(phablet) {
+     .media__body {
+       text-align: right;
+     }
     flex-direction: row-reverse;
     .media__figure {
       margin-right: 0;
@@ -47,5 +47,5 @@
 
     }
 
-  } 
+  }
 }
