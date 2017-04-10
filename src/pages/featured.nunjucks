@@ -13,31 +13,31 @@
           <div class="g-cell audio__item">
             <audio controls="controls">
               Your browser does not support the <code>audio</code> element.
-              <source src="audio/audio-1.mp4" preload="auto">
+              <source src="audio/audio-1.mp4" preload="none">
             </audio>
           </div>
           <div class="g-cell audio__item margin-top--small">
             <audio controls="controls">
               Your browser does not support the <code>audio</code> element.
-              <source src="audio/audio-2.mp4" preload="auto">
+              <source src="audio/audio-2.mp4" preload="none">
             </audio>
           </div>
           <div class="g-cell audio__item margin-top--small">
               <audio controls="controls">
                 Your browser does not support the <code>audio</code> element.
-                <source src="audio/audio-3.mp4" preload="auto">
+                <source src="audio/audio-3.mp4" preload="none">
               </audio>
             </div>
           <div class="g-cell audio__item margin-top--small">
                 <audio controls="controls">
                   Your browser does not support the <code>audio</code> element.
-                  <source src="audio/audio-4.mp4" preload="auto">
+                  <source src="audio/audio-4.mp4" preload="none">
                 </audio>
               </div>
           <div class="g-cell audio__item margin-top--small">
                 <audio controls="controls">
                   Your browser does not support the <code>audio</code> element.
-                  <source src="audio/audio-5.mp4" preload="auto">
+                  <source src="audio/audio-5.mp4" preload="none">
                 </audio>
               </div>
         </div>
