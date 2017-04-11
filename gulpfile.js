@@ -38,6 +38,8 @@ jsDest = destDir;
 guideDest = destDir + 'styleguide/'
 imgSrc = sourceDir + 'images/**/*';
 imgDest = destDir + 'images';
+audioSrc = sourceDir + 'audio/*';
+audioDest = destDir + 'audio';
 svgSrc = sourceDir + 'svg';
 svgDest = destDir + 'svg';
 svgGlob = '**/*.svg';
@@ -139,6 +141,12 @@ gulp.task('imgProcess', function() {
         .pipe(gulp.dest(imgDest))
 });
 
+// Move Audio Files
+gulp.task('audio', function() {
+    gulp.src(audioSrc)
+        .pipe(gulp.dest(audioDest))
+});
+
 // Create SVG Sprite
 // https://github.com/jkphl/gulp-svg-sprite
 gulp.task('svgSprite', function() {
@@ -203,12 +211,12 @@ gulp.task('watch', ['browserSync'], function() {
 gulp.task('dev', ['clean', ], function(cb) {
     cb = cb || function() {};
     isProd = false;
-    return runSequence(['sass', 'nunjucks', 'js', 'imgProcess','svgSprite', 'styleguide'], 'watch', cb);
+    return runSequence(['sass', 'nunjucks', 'js', 'imgProcess', 'audio', 'svgSprite', 'styleguide'], 'watch', cb);
 });
 
 // Gulp prod task
 gulp.task('prod', ['clean'], function(cb) {
     cb = cb || function() {};
     isProd = true;
-    return runSequence(['sass', 'js', 'imgProcess', 'svgSprite', 'nunjucks'], 'watch', cb);
+    return runSequence(['sass', 'js', 'imgProcess', 'audio', 'svgSprite', 'nunjucks'], 'watch', cb);
 });
