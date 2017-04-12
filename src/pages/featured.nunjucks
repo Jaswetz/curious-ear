@@ -1,4 +1,4 @@
-<!-- contact.nunjucks -->
+<!-- featured.nunjucks -->
 {% extends "layout.nunjucks" %}
 
 {% block content %}
