@@ -510,7 +510,9 @@ h1,
 h2,
 .h2 {
   font-size: 3.815rem;
-  margin-bottom: 1.875rem; }
+  margin-bottom: 1.875rem;
+  line-height: 5rem;
+}
 
 /* line 84, C:/Users/Dimitrii_Pokrovskii/Documents/curious-ear/src/styles/3-base/_typography.scss */
 h3,
