@@ -1,14 +1,14 @@
+// requires jQuery
+// requires momentjs
 (function($) {
-
   //
   // Globals -------------------------------------------------------------------
   //
   var AUDIO_JSON_URL = "http://storybox-145021.appspot.com/api/audio/list?location=friendship-health-easter";
-
   //
   // AudioPlayer ---------------------------------------------------------------
   //
-  var AudioPlayer;
+  var AudioList;
   (function () {
 
     function getJSON (url, cb) {
@@ -16,7 +16,19 @@
         cb(data);
       });
     }
-
+    // Used to convert data depending on how it comes
+    //
+    // [ {}, {} ,{}] // curently
+    //
+    function dataConverter (dataIn) {
+      var dataOut = [];
+      if (dataIn instanceof Array) {
+        dataIn.forEach(function (model) {
+          dataOut.push(model);
+        });
+      }
+      return dataOut;
+    }
     // Used to fix any changes that may happen as the API changes
     // {
     //   timestamp: "2017-04-12T03:53:31.993000",
@@ -25,14 +37,22 @@
     //   length_in_seconds: 23,
     //   location_recorded: "friendship-health-easter"
     // }
-    function dataConverter (dataIn) {
-      var dataOut = dataIn;
-      return dataOut;
+    function modelConverter (modelIn) {
+      var modelOut = {};
+      if (modelIn instanceof Object) {
+        var recordingDuration = moment.duration(modelIn.length_in_seconds, 'seconds');
+        modelOut.timestamp = moment.utc(modelIn.timestamp).local().format("dddd, MMMM Do YYYY, h:mm a") || "No Time Stamp";
+        modelOut.public_url = modelIn.public_url || "#";
+        modelOut.duration = recordingDuration.humanize();
+      }
+      return modelOut;
     }
 
     function createAudioDomElement(model) {
       var htmlString = '';
-      htmlString += '<div class="g-cell audio__item">';
+      htmlString += '<p>' + model.timestamp + "</p>";
+      htmlString += '<p class="margin-left">' + model.duration + "</p>";
+      htmlString += '<div class="g-cell audio__item margin-bottom--large">';
       htmlString += '<audio controls="controls" preload="none">';
       htmlString += '<source src="' + model.public_url + '">';
       htmlString += '</audio>';
@@ -40,29 +60,23 @@
       $("#audioContainer").append(htmlString);
     }
 
-    AudioPlayer = function () {}
-    AudioPlayer.prototype = {
+    AudioList = function () {}
+    AudioList.prototype = {
       Create : function (url) {
         getJSON(url, function (data) {
           var convertedData = dataConverter(data);
-
-          if (!(convertedData instanceof Array))
-            return;
-
           convertedData.forEach(function (model) {
-            createAudioDomElement(model);
+            createAudioDomElement(modelConverter(model));
           });
         });
       }
     };
   })();
-
   //
   // Main ----------------------------------------------------------------------
   //
   $(document).ready(function() {
-    window.audioPlayer = new AudioPlayer();
-    audioPlayer.Create(AUDIO_JSON_URL);
+    audioList = new AudioList();
+    audioList.Create(AUDIO_JSON_URL);
   });
-
 })($)
