@@ -2,61 +2,151 @@
 {% extends "layout.nunjucks" %}
 
 {% block content %}
-    <div class="where--active">
-      {% include "partials/header.nunjucks" %}
+  <div class="where--active">
+    {% include "partials/header.nunjucks" %}
+  </div>
+  <main>
+    <div class="page-intro">
+      <h2>Where and When</h2>
+      <p>Curious Ear can be found in different places at different times in and around the city. Check here to keep up to date on where to find us next.</p>
+      <p>If you would like to see Curious Ear where you are or know of a great place where we should put it
+        <a href="mailto:hello@curiousear.com" alt="Curious Comedy Email">let us know!</a>
+      </p>
     </div>
-    <main>
-      <div class="page-intro">
-        <h2>Where and When</h2>
-        <p>Curious Ear can be found in different places at different times in and around the city. Check here to keep up to date on where to find us next.</p>
-        <p>If you would like to see Curious Ear where you are or know of a great place where we should put it <a href="mailto:hello@curiousear.com" alt="Curious Comedy Email">let us know!</a></p>
+    <h3 class="margin-top">Current</h3>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--fhs.jpg" alt="A member of Friendship Health Center recording a story.">
+        </div>
+        <div class="media__body">
+          <h4 class="event__title">Friendship Health Center Easter 2017</h4>
+          <span class="event__date">April 14-16, 2017</span>
+          <p>On Good Friday, April 14, Curious Ear will be featured at
+            <a href="https://www.facebook.com/FHC.PDX/" target="__blank">Friendship Health Center</a>
+            assisted-living facility for a multigenerational family event. Listen to the stories recorded here:
+            <a href="http://easter2017.curiousear.com/" target="__blank">easter2017.curiousear.com</a>
+          </p>
+        </div>
       </div>
-      <h3 class="margin-top">Future Events</h3>
-        <div class="event">
-          <div class="media">
-            <div class="media__figure">
-              <img src="images/img--spaceness.png" alt="A weird art structure from the event Spaceness.">
-            </div>
-            <div class="media__body">
-              <h4 class="event__title">Spaceness 2017</h4>
-              <span class="event__date">February 24-26, 2017</span>
-              <p><a href="http://spaceness.com/">SPACENESS</a> is a celebration of time, space and the unknown through experimental art, media and performance. Each year SPACENESS takes over the Sou'Wester Lodge in Seaview, WA, as well as the adjacent forest, seashore and wild spaces. Curious Ear will be there to help share stories and connect people. Come check it out!</p>
-            </div>
-          </div>
-          <div class="event__map">
-                  <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJBwsWg2ltk1QR3iEQjXb17G8&key=AIzaSyAVIKNiU-Uhz7nkiH55FkEtjsjQpiPSiw8" allowfullscreen></iframe>
-          </div>
+      <div class="event__map">
+        <iframe
+          width="600"
+          height="450"
+          frameborder="0"
+          style="border:0"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.9815302690927!2d-122.63373978381078!3d45.49031667910117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a82d1a3ba3b%3A0xc37c72f409fc4a4b!2sFriendship+Health+Center!5e0!3m2!1sen!2sus!4v1492290071035"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <h3 class="margin-top">Future Events</h3>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--project-connect.jpg" alt="Project Connect">
         </div>
-        <div class="event">
-          <div class="media">
-            <div class="media__figure">
-              <img src="images/img--jnames.jpg" alt="The J Names improv team.">
-            </div>
-            <div class="media__body">
-              <h4 class="event__title">J Names at the Siren Theater</h4>
-              <span class="event__date">January 20, 2017</span>
-              <p><a href="http://jnamescomedy.com/">J Names</a> are improvisers from Portland's theaters and groups came together in a self-proclaimed supergroup. These performers are the real thing. See them at <a href="http://www.sirentheater.com/">Siren Theater</a>, get tickets now on <a href="https://www.eventbrite.com/e/j-names-improv-society-tickets-30907012707">Eventbrite</a></p>
-            </div>
-          </div>
-          <div class="event__map">
-                  <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Siren%20Theater&key=AIzaSyCiajXzB5WdVIYAm1Ft_Gs4EwDpv7H0z7I" allowfullscreen></iframe>
-          </div>
+        <div class="media__body">
+          <h4 class="event__title">Project Connect’s Launch Event</h4>
+          <span class="event__date">April 20, 2017</span>
+          <p>On Friday, April 20, come see Curious Ear at Project Connect’s launch event!
+            <a href="https://www.meetup.com/PDX-Creative-Networking-Socials/events/231163646/?isFromReg=true" target="__blank">MeetUp Event</a>
+            and
+            <a href="https://www.facebook.com/events/1420414804675297/?__mref=mb" target="__blank">Facebook Page</a>
+          </p>
         </div>
-        <div class="event">
-          <div class="media">
-            <div class="media__figure">
-              <img src="images/img--resolutionnw.jpg" alt="Resolutions Northwest talking into a large ear.">
-            </div>
-            <div class="media__body">
-              <h4 class="event__title"> Resolutions Northwest</h4>
-              <span class="event__date">January 20, 2017</span>
-              <p><a href="https://resolutionsnorthwest.org/">Resolutions Northwest</a> facilitates honest dialogue to resolve conflict and advance racial and social justice. We envision inclusive and just communities in which people connect across differences and equitably share opportunities to thrive.</p>
-            </div>
-          </div>
-          <div class="event__map">
-                  <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=%20%20Resolutions%20Northwest&key=AIzaSyAgFHoWFxOevk4BOi61ed_ZP-wNW4FgQqo" allowfullscreen></iframe>
-          </div>
+      </div>
+      <div class="event__map">
+        <iframe
+          width="600"
+          height="450"
+          frameborder="0"
+          style="border:0"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.8361061685655!2d-122.66330218444084!3d45.51337777910163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a0ae3b1e6db%3A0x3f581143e0b19156!2s1302+SE+Martin+Luther+King+Jr+Blvd%2C+Portland%2C+OR+97214!5e0!3m2!1sen!2sus!4v1492291484028"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--royalton.gif" alt="Royalton Place">
         </div>
-    </main>
+        <div class="media__body">
+          <h4 class="event__title">Royalton Place and Alder Elementary</h4>
+          <span class="event__date">May 1-31, 2017</span>
+          <p>Starting May 1, we have our first one month cross-generational residency! We are pairing the ear and mouth at
+            <a href="http://www.royaltonplace.com/" target="__blank">Royalton Place</a>
+            assisted-living facility and
+            <a href="http://www.reynolds.k12.or.us/alder" target="__blank">Alder Elementary.</a>
+          </p>
+        </div>
+      </div>
+      <div class="event__map">
+        <iframe
+          width="600"
+          height="450"
+          frameborder="0"
+          style="border:0"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2799.0461077007253!2d-122.60864718381174!3d45.448726979100826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54957540e39a34c3%3A0x7be9182ca11047b1!2sRoyalton+Place!5e0!3m2!1sen!2sus!4v1492290339795"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <h3 class="margin-top">Past Events</h3>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--spaceness.png" alt="A weird art structure from the event Spaceness.">
+        </div>
+        <div class="media__body">
+          <h4 class="event__title">Spaceness 2017</h4>
+          <span class="event__date">February 24-26, 2017</span>
+          <p>
+            <a href="http://spaceness.com/">SPACENESS</a>
+            is a celebration of time, space and the unknown through experimental art, media and performance. Each year SPACENESS takes over the Sou'Wester Lodge in Seaview, WA, as well as the adjacent forest, seashore and wild spaces. Curious Ear will be there
+            to help share stories and connect people. Come check it out!</p>
+        </div>
+      </div>
+      <div class="event__map">
+        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJBwsWg2ltk1QR3iEQjXb17G8&key=AIzaSyAVIKNiU-Uhz7nkiH55FkEtjsjQpiPSiw8" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--jnames.jpg" alt="The J Names improv team.">
+        </div>
+        <div class="media__body">
+          <h4 class="event__title">J Names at the Siren Theater</h4>
+          <span class="event__date">January 20, 2017</span>
+          <p>
+            <a href="http://jnamescomedy.com/">J Names</a>
+            are improvisers from Portland's theaters and groups came together in a self-proclaimed supergroup. These performers are the real thing. See them at
+            <a href="http://www.sirentheater.com/">Siren Theater</a>, get tickets now on
+            <a href="https://www.eventbrite.com/e/j-names-improv-society-tickets-30907012707">Eventbrite</a>
+          </p>
+        </div>
+      </div>
+      <div class="event__map">
+        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Siren%20Theater&key=AIzaSyCiajXzB5WdVIYAm1Ft_Gs4EwDpv7H0z7I" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--resolutionnw.jpg" alt="Resolutions Northwest talking into a large ear.">
+        </div>
+        <div class="media__body">
+          <h4 class="event__title">
+            Resolutions Northwest</h4>
+          <span class="event__date">January 20, 2017</span>
+          <p>
+            <a href="https://resolutionsnorthwest.org/">Resolutions Northwest</a>
+            facilitates honest dialogue to resolve conflict and advance racial and social justice. We envision inclusive and just communities in which people connect across differences and equitably share opportunities to thrive.</p>
+        </div>
+      </div>
+      <div class="event__map">
+        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=%20%20Resolutions%20Northwest&key=AIzaSyAgFHoWFxOevk4BOi61ed_ZP-wNW4FgQqo" allowfullscreen></iframe>
+      </div>
+    </div>
+  </main>
   {% include "partials/footer.nunjucks" %}
 {% endblock %}
