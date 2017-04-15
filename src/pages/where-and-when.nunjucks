@@ -105,9 +105,9 @@
             to help share stories and connect people. Come check it out!</p>
         </div>
       </div>
-      <div class="event__map">
+      {# <div class="event__map">
         <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJBwsWg2ltk1QR3iEQjXb17G8&key=AIzaSyAVIKNiU-Uhz7nkiH55FkEtjsjQpiPSiw8" allowfullscreen></iframe>
-      </div>
+      </div> #}
     </div>
     <div class="event">
       <div class="media">
@@ -125,9 +125,9 @@
           </p>
         </div>
       </div>
-      <div class="event__map">
+      {# <div class="event__map">
         <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Siren%20Theater&key=AIzaSyCiajXzB5WdVIYAm1Ft_Gs4EwDpv7H0z7I" allowfullscreen></iframe>
-      </div>
+      </div> #}
     </div>
     <div class="event">
       <div class="media">
@@ -143,9 +143,9 @@
             facilitates honest dialogue to resolve conflict and advance racial and social justice. We envision inclusive and just communities in which people connect across differences and equitably share opportunities to thrive.</p>
         </div>
       </div>
-      <div class="event__map">
+      {# <div class="event__map">
         <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=%20%20Resolutions%20Northwest&key=AIzaSyAgFHoWFxOevk4BOi61ed_ZP-wNW4FgQqo" allowfullscreen></iframe>
-      </div>
+      </div> #}
     </div>
   </main>
   {% include "partials/footer.nunjucks" %}
