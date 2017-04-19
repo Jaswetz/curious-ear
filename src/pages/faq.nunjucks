@@ -1,0 +1,20 @@
+<!-- faq.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+  <div class="faq--active">
+    {% include "partials/header.nunjucks" %}
+  </div>
+  <main>
+    <div class="page-intro">
+      <h2>FAQ</h2>
+      <p>What do you want to know about Curious Ear? Hopefully you'll find it here. If you don't send us an <a href="mailto:hello@curiousear.com">email.com</a> and ask us. We are super friendly!</p>
+    </div>
+    <div class="page--content">
+      <h3 class="text-size--large font-weight--bold optimal-length--center">What happens to the story I share with the ear?</h3>
+      <p>Your story gets recorded and stored on our secure server. Then, it gets released to the mouth so people can listen to it somewhere across the city.</p>
+    </div>
+  </main>
+  {% include "partials/footer.nunjucks" %}
+
+{% endblock %}

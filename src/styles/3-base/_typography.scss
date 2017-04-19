@@ -49,7 +49,7 @@ p {
 
 p {
   margin-bottom: $spacing;
-  max-width: rem(800px);
+  @extend .optimal-length;
 }
 
 p,

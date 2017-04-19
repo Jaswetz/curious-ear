@@ -16,6 +16,9 @@
                     <li class="about">
                         <a href="about.html">About Us</a>
                     </li>
+                    <li class="faq">
+                        <a href="faq.html">FAQ</a>
+                    </li>
                 </ul>
             </nav>
         </div>

@@ -11,7 +11,7 @@
         </div>
     </div>
 </section>
-<div class="home">
+<div class="home home--active">
     {% include "partials/header.nunjucks" %}
 </div>
 <main class="home">

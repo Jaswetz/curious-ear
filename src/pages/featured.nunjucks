@@ -8,7 +8,9 @@
   <main>
     <div class="page-intro">
       <h2>Featured</h2>
-      What do people say when they talk to curious ear? Here's a sampling of recordings--secrets, stories and answers to questions like "what do you most want a stranger to know?"
+      <p>What do people say when they talk to curious ear? Here's a sampling of recordings--secrets, stories and answers to questions like "what do you most want a stranger to know?"</p>
+    </div>
+    <div class="page--content">
       <div id="audioContainer" class="g--full g--1of1 g audio margin-top"></div>
       <script src="js/vendor/moment.min.js"></script>
       <script src="js/featured_audio_list.js"></script>

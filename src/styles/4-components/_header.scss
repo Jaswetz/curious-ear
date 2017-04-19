@@ -28,7 +28,6 @@
 
   }
 
-
   h1 > a {
     font-family: $font-family--secondary;
     font-weight: bold;
@@ -167,6 +166,20 @@
 
 .about--active {
   .about a {
+    color: $color--purple;
+    cursor: default;
+  }
+}
+
+.faq--active {
+  .faq a {
+    color: $color--purple;
+    cursor: default;
+  }
+}
+
+.home--active {
+  .home a {
     color: $color--purple;
     cursor: default;
   }
