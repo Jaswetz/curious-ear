@@ -8,11 +8,15 @@
   <main>
     <div class="page-intro">
       <h2>FAQ</h2>
-      <p>What do you want to know about Curious Ear? Hopefully you'll find it here. If you don't send us an <a href="mailto:hello@curiousear.com">email.com</a> and ask us. We are super friendly!</p>
+      <p>What do you want to know about Curious Ear? Hopefully you'll find it here. If you don't, send us an <a href="mailto:hello@curiousear.com">email</a> with your question. We are super friendly!</p>
     </div>
     <div class="page--content">
       <h3 class="text-size--large font-weight--bold optimal-length--center">What happens to the story I share with the ear?</h3>
-      <p>Your story gets recorded and stored on our secure server. Then, it gets released to the mouth so people can listen to it somewhere across the city.</p>
+      <p>Your story gets recorded and stored on our secure server. Then, it gets released to the mouth (and sometimes our website) so people can listen to it somewhere across the city.</p>
+      <h3 class="text-size--large font-weight--bold optimal-length--center">Has Curious Ear been mentioned in the news?</h3>
+      <p>Why yes! The Southeast Examiner wrote <a href="http://www.southeastexaminer.com/2017/04/curious-ear-captures-stories/">an awesome article about us</a>.</p>
+      <h3 class="text-size--large font-weight--bold optimal-length--center">How many structures do you have?</h3>
+      <p>We currently only have one Ear and one Mouth. We are planning on building more. If you are an artist or a builder and would like to contribute by making one, <a href="mailto:hello@curiousear.com">get in touch</a>.</p>
     </div>
   </main>
   {% include "partials/footer.nunjucks" %}
