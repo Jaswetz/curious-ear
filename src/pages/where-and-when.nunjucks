@@ -17,31 +17,6 @@
     <div class="event">
       <div class="media">
         <div class="media__figure">
-          <img src="images/img--project-connect.jpg" alt="Project Connect">
-        </div>
-        <div class="media__body">
-          <h4 class="event__title">Project Connect’s Launch Event</h4>
-          <span class="event__date">April 21, 2017</span>
-          <p>On Friday, April 21, come see Curious Ear at Project Connect’s launch event!
-            <a href="https://www.meetup.com/PDX-Creative-Networking-Socials/events/231163646/?isFromReg=true" target="__blank">MeetUp Event</a>
-            and
-            <a href="https://www.facebook.com/events/1420414804675297/?__mref=mb" target="__blank">Facebook Page</a>
-          </p>
-        </div>
-      </div>
-      <div class="event__map">
-        <iframe
-          width="600"
-          height="450"
-          frameborder="0"
-          style="border:0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.8361061685655!2d-122.66330218444084!3d45.51337777910163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a0ae3b1e6db%3A0x3f581143e0b19156!2s1302+SE+Martin+Luther+King+Jr+Blvd%2C+Portland%2C+OR+97214!5e0!3m2!1sen!2sus!4v1492291484028"
-          allowfullscreen></iframe>
-      </div>
-    </div>
-    <div class="event">
-      <div class="media">
-        <div class="media__figure">
           <img src="images/img--royalton.gif" alt="Royalton Place">
         </div>
         <div class="media__body">
@@ -65,6 +40,31 @@
       </div>
     </div>
     <h3 class="margin-top">Past Events</h3>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--project-connect.jpg" alt="Project Connect">
+        </div>
+        <div class="media__body">
+          <h4 class="event__title">Project Connect’s Launch Event</h4>
+          <span class="event__date">April 21, 2017</span>
+          <p>On Friday, April 21, come see Curious Ear at Project Connect’s launch event!
+            <a href="https://www.meetup.com/PDX-Creative-Networking-Socials/events/231163646/?isFromReg=true" target="__blank">MeetUp Event</a>
+            and
+            <a href="https://www.facebook.com/events/1420414804675297/?__mref=mb" target="__blank">Facebook Page</a>
+          </p>
+        </div>
+      </div>
+      {# <div class="event__map">
+        <iframe
+          width="600"
+          height="450"
+          frameborder="0"
+          style="border:0"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.8361061685655!2d-122.66330218444084!3d45.51337777910163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a0ae3b1e6db%3A0x3f581143e0b19156!2s1302+SE+Martin+Luther+King+Jr+Blvd%2C+Portland%2C+OR+97214!5e0!3m2!1sen!2sus!4v1492291484028"
+          allowfullscreen></iframe>
+      </div> #}
+    </div>
     <div class="event">
       <div class="media">
         <div class="media__figure">
