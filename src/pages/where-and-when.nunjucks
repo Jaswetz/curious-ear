@@ -13,33 +13,33 @@
         <a href="mailto:hello@curiousear.com" alt="Curious Comedy Email">let us know!</a>
       </p>
     </div>
-    <h3 class="margin-top">Current</h3>
+    <h3 class="margin-top">Current Events</h3>
     <div class="event">
       <div class="media">
         <div class="media__figure">
-          <img src="images/img--fhs.jpg" alt="A member of Friendship Health Center recording a story.">
+          <img src="images/img--royalton.gif" alt="Royalton Place">
         </div>
         <div class="media__body">
-          <h4 class="event__title">Friendship Health Center Easter 2017</h4>
-          <span class="event__date">April 14-16, 2017</span>
-          <p>On Good Friday, April 14, Curious Ear will be featured at
-            <a href="https://www.facebook.com/FHC.PDX/" target="__blank">Friendship Health Center</a>
-            assisted-living facility for a multigenerational family event. Listen to the stories recorded here:
-            <a href="http://easter2017.curiousear.com/" target="__blank">easter2017.curiousear.com</a>
+          <h4 class="event__title">Royalton Place and Alder Elementary</h4>
+          <span class="event__date">May 1-31, 2017</span>
+          <p>Starting May 1, we have our first one month cross-generational residency! We are pairing the ear and mouth at
+            <a href="http://royalton.curiousear.com/" target="__blank">Royalton Place</a>
+            assisted-living facility and
+            <a href="http://alder.curiousear.com/" target="__blank">Alder Elementary.</a>
           </p>
         </div>
       </div>
-      <div class="event__map">
+      {# <div class="event__map">
         <iframe
           width="600"
           height="450"
           frameborder="0"
           style="border:0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.9815302690927!2d-122.63373978381078!3d45.49031667910117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a82d1a3ba3b%3A0xc37c72f409fc4a4b!2sFriendship+Health+Center!5e0!3m2!1sen!2sus!4v1492290071035"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2799.0461077007253!2d-122.60864718381174!3d45.448726979100826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54957540e39a34c3%3A0x7be9182ca11047b1!2sRoyalton+Place!5e0!3m2!1sen!2sus!4v1492290339795"
           allowfullscreen></iframe>
-      </div>
+      </div> #}
     </div>
-    <h3 class="margin-top">Future Events</h3>
+    <h3 class="margin-top">Past Events</h3>
     <div class="event">
       <div class="media">
         <div class="media__figure">
@@ -55,7 +55,7 @@
           </p>
         </div>
       </div>
-      <div class="event__map">
+      {# <div class="event__map">
         <iframe
           width="600"
           height="450"
@@ -63,34 +63,33 @@
           style="border:0"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.8361061685655!2d-122.66330218444084!3d45.51337777910163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a0ae3b1e6db%3A0x3f581143e0b19156!2s1302+SE+Martin+Luther+King+Jr+Blvd%2C+Portland%2C+OR+97214!5e0!3m2!1sen!2sus!4v1492291484028"
           allowfullscreen></iframe>
-      </div>
+      </div> #}
     </div>
     <div class="event">
       <div class="media">
         <div class="media__figure">
-          <img src="images/img--royalton.gif" alt="Royalton Place">
+          <img src="images/img--fhs.jpg" alt="A member of Friendship Health Center recording a story.">
         </div>
         <div class="media__body">
-          <h4 class="event__title">Royalton Place and Alder Elementary</h4>
-          <span class="event__date">May 1-31, 2017</span>
-          <p>Starting May 1, we have our first one month cross-generational residency! We are pairing the ear and mouth at
-            <a href="http://www.royaltonplace.com/" target="__blank">Royalton Place</a>
-            assisted-living facility and
-            <a href="http://www.reynolds.k12.or.us/alder" target="__blank">Alder Elementary.</a>
+          <h4 class="event__title">Friendship Health Center Easter 2017</h4>
+          <span class="event__date">April 14-16, 2017</span>
+          <p>On Good Friday, April 14, Curious Ear will be featured at
+            <a href="https://www.facebook.com/FHC.PDX/" target="__blank">Friendship Health Center</a>
+            assisted-living facility for a multigenerational family event. Listen to the stories recorded here:
+            <a href="http://easter2017.curiousear.com/" target="__blank">easter2017.curiousear.com</a>
           </p>
         </div>
       </div>
-      <div class="event__map">
+      {# <div class="event__map">
         <iframe
           width="600"
           height="450"
           frameborder="0"
           style="border:0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2799.0461077007253!2d-122.60864718381174!3d45.448726979100826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54957540e39a34c3%3A0x7be9182ca11047b1!2sRoyalton+Place!5e0!3m2!1sen!2sus!4v1492290339795"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.9815302690927!2d-122.63373978381078!3d45.49031667910117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a82d1a3ba3b%3A0xc37c72f409fc4a4b!2sFriendship+Health+Center!5e0!3m2!1sen!2sus!4v1492290071035"
           allowfullscreen></iframe>
-      </div>
+      </div> #}
     </div>
-    <h3 class="margin-top">Past Events</h3>
     <div class="event">
       <div class="media">
         <div class="media__figure">
