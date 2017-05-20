@@ -1,24 +1,31 @@
 <!-- faq.nunjucks -->
-{% extends "layout.nunjucks" %}
-
-{% block content %}
-  <div class="faq--active">
-    {% include "partials/header.nunjucks" %}
+{% extends "layout.nunjucks" %} {% block content %}
+<div class="faq--active">
+  {% include "partials/header.nunjucks" %}
+</div>
+<main>
+  <div class="page-intro">
+    <h2>FAQ</h2>
+    <p>What do you want to know about Curious Ear? Hopefully you'll find it here. If you don't, send us an <a href="mailto:hello@curiousear.com">email</a> and ask us. We’re super friendly!</p>
   </div>
-  <main>
-    <div class="page-intro">
-      <h2>FAQ</h2>
-      <p>What do you want to know about Curious Ear? Hopefully you'll find it here. If you don't, send us an <a href="mailto:hello@curiousear.com">email</a> with your question. We are super friendly!</p>
-    </div>
-    <div class="page--content">
-      <h3 class="text-size--large font-weight--bold optimal-length--center">What happens to the story I share with the ear?</h3>
-      <p>Your story gets recorded and stored on our secure server. Then, it gets released to the mouth (and sometimes our website) so people can listen to it somewhere across the city.</p>
-      <h3 class="text-size--large font-weight--bold optimal-length--center">Has Curious Ear been mentioned in the news?</h3>
-      <p>Why yes! The Southeast Examiner wrote <a href="http://www.southeastexaminer.com/2017/04/curious-ear-captures-stories/">an awesome article about us</a>.</p>
-      <h3 class="text-size--large font-weight--bold optimal-length--center">How many structures do you have?</h3>
-      <p>We currently only have one Ear and one Mouth. We are planning on building more. If you are an artist or a builder and would like to contribute by making one, <a href="mailto:hello@curiousear.com">get in touch</a>.</p>
-    </div>
-  </main>
-  {% include "partials/footer.nunjucks" %}
-
-{% endblock %}
+  <div class="page--content">
+    <h3 class="text-size--large font-weight--bold optimal-length--center">Is what I share anonymous? Will people know it’s me?</h3>
+    <p>The ear logs the location and date/time along with your recording, but other than that there’s no personally identifiable
+      information. Unless you say your name to the ear, or someone knows your voice really well (like your parents, partners,
+      close friends) no one will know it’s you.</p>
+    <h3 class="text-size--large font-weight--bold optimal-length--center">How is this project funded?</h3>
+    <p>Right now, we’re all self-funded. We’ve been applying for grants, and are planning a fundraising event for summer 2017.
+      We’re also looking into partner organizations interested in helping us create more durable construction, out of materials
+      like rubber, aluminum or something we haven’t even thought of yet. (Right now the ear and mouth are made of paper mache
+      and you know … Portland rain is notorious for melting paper ears and mouths.)</p>
+    <h3 class="text-size--large font-weight--bold optimal-length--center">I’d like to be a part of Curious Ear. How do I get involved?</h3>
+    <p>Share your story with the ear, spread the word about the project, and let us know where you think Curious Ear would most
+      benefit people. (Just shoot us an <a href="mailto:hello@curiousear.com">email</a> or a message on <a href="https://www.facebook.com/curiousear/"
+        target="__blank" class="footer__link">Facebook</a>!) If you’re interesting in volunteering, send an email with the
+      subject line “volunteer interest” and we’ll get back to you as soon as humanly possible!</a>.</p>
+    <h3 class="text-size--large font-weight--bold optimal-length--center">Your project is amazing and I want to sponsor or host it.</h3>
+    <p>We’re thrilled to hear that and would love to meet you. Get <a href="mailto:hello@curiousear.com">in touch</a> with us
+      and let us know how we might be able to work together! </p>
+  </div>
+</main>
+{% include "partials/footer.nunjucks" %} {% endblock %}
