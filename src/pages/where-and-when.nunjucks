@@ -13,11 +13,42 @@
         <a href="mailto:hello@curiousear.com" alt="Curious Comedy Email">let us know!</a>
       </p>
     </div>
-    <h3 class="margin-top">Current Events</h3>
+
+    {# <h3 class="margin-top">Current Events</h3> #}
+
+    <h3 class="margin-top">Past Events</h3>
     <div class="event">
       <div class="media">
         <div class="media__figure">
-          <img src="images/img--royalton.gif" alt="Royalton Place">
+          <img src="images/img--artwalk.png" alt="Milwaukie Art Walk">
+        </div>
+        <div class="media__body">
+          <h4 class="event__title">Milwaukie Art Walk</h4>
+          <span class="event__date">July 7, 2017</span>
+          <p>
+            <a href="http://milwaukieartwalk.curiousear.com/" target="__blank">Listen to stories here.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--mealsonwheels.jpg" alt="Meals on Wheels">
+        </div>
+        <div class="media__body">
+          <h4 class="event__title">Meals on Wheels</h4>
+          <span class="event__date">June 5, 2017</span>
+          <p>
+            <a href="http://mealsonwheels.curiousear.com/" target="__blank">Listen to stories here.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--royalton.jpg" alt="Royalton Place">
         </div>
         <div class="media__body">
           <h4 class="event__title">Royalton Place and Alder Elementary</h4>
@@ -29,17 +60,7 @@
           </p>
         </div>
       </div>
-      {# <div class="event__map">
-        <iframe
-          width="600"
-          height="450"
-          frameborder="0"
-          style="border:0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2799.0461077007253!2d-122.60864718381174!3d45.448726979100826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54957540e39a34c3%3A0x7be9182ca11047b1!2sRoyalton+Place!5e0!3m2!1sen!2sus!4v1492290339795"
-          allowfullscreen></iframe>
-      </div> #}
     </div>
-    <h3 class="margin-top">Past Events</h3>
     <div class="event">
       <div class="media">
         <div class="media__figure">
@@ -93,7 +114,7 @@
     <div class="event">
       <div class="media">
         <div class="media__figure">
-          <img src="images/img--spaceness.png" alt="A weird art structure from the event Spaceness.">
+          <img src="images/img--listentomouth.jpg" alt="A weird art structure from the event Spaceness.">
         </div>
         <div class="media__body">
           <h4 class="event__title">Spaceness 2017</h4>
