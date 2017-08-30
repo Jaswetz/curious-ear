@@ -4,7 +4,7 @@
   //
   // Globals -------------------------------------------------------------------
   //
-  var AUDIO_JSON_URL = "https://storybox-145021.appspot.com/api/audio/list?location=MilwaukieArtWalk";
+  var AUDIO_JSON_URL = "https://api.curiousear.com/audio/list?location=MilwaukieArtWalk";
   //
   // AudioPlayer ---------------------------------------------------------------
   //

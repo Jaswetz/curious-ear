@@ -4,7 +4,7 @@
   //
   // Globals -------------------------------------------------------------------
   //
-  var AUDIO_JSON_URL = "https://storybox-145021.appspot.com/api/audio/list?location=alder-elementary";
+  var AUDIO_JSON_URL = "http://api.curiousear.com/audio/list?location=alder-elementary";
   //
   // AudioPlayer ---------------------------------------------------------------
   //
