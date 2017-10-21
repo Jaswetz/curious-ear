@@ -19,7 +19,8 @@ var isArray = require('isarray');
 var htmlmin = require('gulp-html-minifier');
 var uglify = require('gulp-uglify');
 var nunjucksRender = require('gulp-nunjucks-render');
-
+var concat = require('gulp-concat');
+var sourcemaps = require('gulp-sourcemaps');
 
 // For production or development?
 isProd = false;
@@ -29,13 +30,14 @@ sourceDir = './src/';
 destDir = './dest/';
 stylesSrc = sourceDir + 'styles/**/*.scss';
 stylesDest = destDir + 'css/';
-jsSrc = sourceDir + '**/*.js';
+jsVendorSrc = sourceDir + 'js/vendor/*.js';
+jsSrc = sourceDir + 'js/*.js';
 htmlSrc = sourceDir + '**/*.+(html|nunjucks)';
 htmlPageSrc = sourceDir + 'pages/' + '**/*.+(html|nunjucks)';
 htmlTemplatesSrc = sourceDir + 'templates';
 htmlDest = destDir;
-jsDest = destDir;
-guideDest = destDir + 'styleguide/'
+jsDest = destDir + '/js/';
+guideDest = destDir + 'styleguide/';
 imgSrc = sourceDir + 'images/**/*';
 imgDest = destDir + 'images';
 audioSrc = sourceDir + 'audio/*';
@@ -48,6 +50,7 @@ svgGlob = '**/*.svg';
 browserPort = 3000;
 guidePort = 3002;
 UIPort = 3003;
+
 
 gulp.task('browserSync', function() {
     browserSync.init({
@@ -98,9 +101,12 @@ gulp.task('sass', function() {
 
 // Move and compress JavaScript
 gulp.task('js', function() {
-    gulp.src(jsSrc)
+    gulp.src([ jsVendorSrc , jsSrc])
         .pipe(gulpif(isProd, uglify()))
-        .pipe(gulp.dest(jsDest))
+        .pipe(sourcemaps.init())
+        .pipe(concat('app.js'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(jsDest));
 });
 
 

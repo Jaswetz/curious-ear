@@ -10,7 +10,6 @@
   //
   var AudioList;
   (function () {
-
     function getJSON (url, cb) {
       $.getJSON( url, function( data ) {
         cb(data);

@@ -21,7 +21,7 @@
     <!-- You write code for this content block in another file -->
     {% block content %}{% endblock %}
 
-    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
