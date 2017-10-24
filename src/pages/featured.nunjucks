@@ -12,8 +12,6 @@
     </div>
     <div class="page--content">
       <div id="audioContainer" class="g--full g--1of1 g audio margin-top"></div>
-      {#<script src="js/vendor/moment.min.js"></script>#}
-      <script src="js/app.js"></script>
     </div>
   </main>
   {% include "partials/footer.nunjucks" %}

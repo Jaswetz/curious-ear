@@ -1,0 +1,21 @@
+#audio-element {
+  width: 100%;
+}
+
+#background-animation{
+  top: 50%;
+  transform: translateY(-50%);
+  left: -100px;
+  position: absolute;
+  width:200px;
+  height: 200px;
+  background-color: #000000;
+  border-radius: 50%;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  opacity: 0;
+}
+
+.square {
+  background-color: red;
+}
