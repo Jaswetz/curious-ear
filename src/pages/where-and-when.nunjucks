@@ -18,7 +18,7 @@
     <div class="event">
       <div class="media">
         <div class="media__figure">
-          <img src="images/img--friendship_health_center.png" alt="Friendship Health Center">
+          <img src="images\img--friendship_health_center.png" alt="Friendship Health Center">
         </div>
         <div class="media__body">
           <h4 class="event__title">Fall Stories at Friendship Health Center</h4>
