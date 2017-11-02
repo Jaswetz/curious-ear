@@ -4,7 +4,7 @@
   //
   // Globals -------------------------------------------------------------------
   //
-  var AUDIO_JSON_URL = "https://api.curiousear.com/audio/list?location=fallstories_friendshiphealthcenter";
+  var AUDIO_JSON_URL = "https://api.curiousear.com/audio/list?location=";
   //
   // AudioPlayer ---------------------------------------------------------------
   //
@@ -75,8 +75,10 @@
   //
   // Main ----------------------------------------------------------------------
   //
-  $(document).ready(function() {
-    audioList = new AudioList();
-    audioList.Create(AUDIO_JSON_URL);
-  });
+  window.CreateAudioList = function (location) {
+    $(document).ready(function() {
+      audioList = new AudioList();
+      audioList.Create(AUDIO_JSON_URL + location);
+    });
+  }
 })($)
