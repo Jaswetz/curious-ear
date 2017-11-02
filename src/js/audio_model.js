@@ -26,6 +26,7 @@ var audioModel = (function($) {
 
         })
         .done(() => {
+            console.log(audio.stories)
             audio.toHTML();
         })
         .fail((err) => {
@@ -69,7 +70,8 @@ var audioModel = (function($) {
 
 
     return {
-        init: audio.init
+        init: audio.init,
+        stories: audio.stories
     };
 
 })(jQuery);

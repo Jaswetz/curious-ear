@@ -28,7 +28,7 @@ var audioController = (function($) {
                         duration: '3000',
                         opacity: '.9',
                         easing: 'linear',
-                        begin: () => introBallCycle()
+                        complete: () => controller.queRandomStory()
                     });
                 };
 
@@ -49,8 +49,30 @@ var audioController = (function($) {
                 };
             },
 
+        queRandomStory() {
+            var randomStory = audioModel.stories[Math.floor(Math.random() * audioModel.stories.length)];
+            controller.loadRandomStory(randomStory.public_url);
+        },
+
+        loadRandomStory(randomStory) {
+            $("#background-animation").append(`<div id="waveform-player"></div>`);
+            var wavesurfer = WaveSurfer.create({
+                container: '#waveform-player',
+                hideScrollbar: true,
+                scrollParent: true,
+                progressColor: '#36b084'
+            });
+            wavesurfer.load(randomStory);
+            wavesurfer.on('ready', function () {
+                wavesurfer.play();
+            });
+        },
+
         init() {
-            controller.animateIntroStart();
+
+            $('#audio-initializer').on('click', (e) => {
+                controller.animateIntroStart();
+            });
         }
 
     };

@@ -1,3 +1,7 @@
+#audio-initializer {
+  text-align: center;
+  margin: 0 auto;
+}
 #audio-element {
   width: 100%;
 }
@@ -14,6 +18,15 @@
   background-size: cover !important;
   background-repeat: no-repeat !important;
   opacity: 0;
+  z-index: 9999;
+}
+
+#waveform-player {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .square {

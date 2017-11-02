@@ -11,9 +11,14 @@
       <p>What do people say when they talk to curious ear? Here's a sampling of recordings--secrets, stories and answers to questions like "what do you most want a stranger to know?"</p>
     </div>
     <div class="page--content">
-      <div id="audioContainer" class="g--full g--1of1 g audio margin-top"></div>
+      <div id="audioContainer" class="g--full g--1of1 g audio margin-top">
+        <div id="audio-initializer">
+          <button class="btn">Listen to Our Stories</button>
+        </div>
+      </div>
     </div>
   </main>
-  {% include "partials/footer.nunjucks" %}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.min.js"></script>
+    {% include "partials/footer.nunjucks" %}
 
 {% endblock %}
