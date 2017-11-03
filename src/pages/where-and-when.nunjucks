@@ -24,9 +24,7 @@
           <h4 class="event__title">Fall Stories at Friendship Health Center</h4>
           <span class="event__date">November 7, 2017</span>
           <p>
-            Curious Ear will be featured at
-            <a href="https://www.facebook.com/FHC.PDX/" target="__blank">Friendship Health Center</a>
-            assisted-living facility where residents will be asked to tell their favorite fall stories.
+            What are YOUR favorite fall stories? That’s what we asked the residents of <a href="https://www.facebook.com/FHC.PDX/" target="__blank">Friendship Health Center</a>, an assisted-living facility in SE Portland. Now you can hear some of their most cherished fall memories as you set out to create some of your own.
             {# <a href="http://fallstories.curiousear.com/" target="__blank">Listen to stories here.</a> #}
           </p>
         </div>
@@ -43,6 +41,9 @@
           <p>
             We are excited to be part of <a href="https://www.whatnowpdx.org/" target="__blank">What Now PDX</a> this year!
             {# <a href="http://whatnowpdx.curiousear.com/" target="__blank">Listen to stories here.</a> #}
+          </p>
+          <p>
+            On November 21st, 2016 2000 people joined together at Revolution Hall in Portland, Oregon to tell the world they were ready to get to work. Community leaders, artists, friends, and neighbors came together to put our fears and frustrations into positive action.
           </p>
         </div>
       </div>
