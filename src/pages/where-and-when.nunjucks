@@ -25,7 +25,7 @@
           <span class="event__date">November 7, 2017</span>
           <p>
             What are YOUR favorite fall stories? That’s what we asked the residents of <a href="https://www.facebook.com/FHC.PDX/" target="__blank">Friendship Health Center</a>, an assisted-living facility in SE Portland. Now you can hear some of their most cherished fall memories as you set out to create some of your own.
-            {# <a href="http://fallstories.curiousear.com/" target="__blank">Listen to stories here.</a> #}
+            <a href="http://fallstories.curiousear.com/" target="__blank">Listen to stories here.</a>
           </p>
         </div>
       </div>
