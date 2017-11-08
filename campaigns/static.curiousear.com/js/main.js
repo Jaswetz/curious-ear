@@ -72,10 +72,13 @@
       var htmlString = '';
       htmlString += '<p>' + model.timestamp + "</p>";
       htmlString += '<p class="margin-left">' + model.duration + "</p>";
-      htmlString += '<div class="g-cell audio__item margin-bottom--large">';
+      htmlString += '<div class="g-cell audio__item margin-bottom--small">';
       htmlString += '<audio controls="controls" preload="none">';
       htmlString += '<source src="' + model.public_url + '">';
       htmlString += '</audio>';
+      htmlString += '</div>';
+      htmlString += '<div class="g-cell audio__item margin-bottom--large">';
+      htmlString += 'Share: <input type="text" name="shareurl" value="' + model.public_url + '">';
       htmlString += '</div>';
       $("#audioContainer").append(htmlString);
     }
