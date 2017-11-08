@@ -63,10 +63,15 @@
     function modelConverter (modelIn) {
       var modelOut = {};
       if (modelIn instanceof Object) {
+        // console.log(modelIn);
         var recordingDuration = moment.duration(modelIn.length_in_seconds, 'seconds');
         modelOut.timestamp = moment.utc(modelIn.timestamp).local().format("dddd, MMMM Do YYYY, h:mm a") || "No Time Stamp";
         modelOut.public_url = modelIn.public_url || "#";
         modelOut.duration = recordingDuration.humanize();
+        // get filename & create share url
+        var parts = modelIn.public_url.split("/");
+        var filename = parts[parts.length - 1];
+        modelOut.share_url = "http://static.curiousear.com/story.html?f=" + filename;
       }
       return modelOut;
     }
@@ -82,8 +87,8 @@
       htmlString += '</div>';
       htmlString += '<div class="g-cell audio__item margin-bottom--large">';
       htmlString += '<div class="g">';
-      htmlString += '<div class="g-cell--1of3">Share:</div>';
-      htmlString += '<div class="g-cell--2of3"><input type="text" name="shareurl" value="' + model.public_url + '" onClick="this.setSelectionRange(0, this.value.length)"></div>';
+      htmlString += '<div class="g-cell--1of3"><a href="'+ model.share_url +'" target="__blank" class="footer__link">Share</a>:</div>';
+      htmlString += '<div class="g-cell--2of3"><input type="text" name="shareurl" value="' + model.share_url + '" onClick="this.setSelectionRange(0, this.value.length)"></div>';
       htmlString += '</div>';
       $("#audioContainer").append(htmlString);
     }
