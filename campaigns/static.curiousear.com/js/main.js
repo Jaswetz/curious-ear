@@ -42,8 +42,11 @@
     function dataConverter (dataIn) {
       var dataOut = [];
       if (dataIn instanceof Array) {
-        shuffledDataIn = shuffle(dataIn);
-        shuffledDataIn.forEach(function (model) {
+        // shuffledDataIn = shuffle(dataIn);
+        // shuffledDataIn.forEach(function (model) {
+        //   dataOut.push(model);
+        // });
+        dataIn.forEach(function (model) {
           dataOut.push(model);
         });
       }
@@ -71,14 +74,16 @@
     function createAudioDomElement(model) {
       var htmlString = '';
       htmlString += '<p>' + model.timestamp + "</p>";
-      htmlString += '<p class="margin-left">' + model.duration + "</p>";
+      htmlString += '<p>' + model.duration + "</p>";
       htmlString += '<div class="g-cell audio__item margin-bottom--small">';
       htmlString += '<audio controls="controls" preload="none">';
       htmlString += '<source src="' + model.public_url + '">';
       htmlString += '</audio>';
       htmlString += '</div>';
       htmlString += '<div class="g-cell audio__item margin-bottom--large">';
-      htmlString += 'Share: <input type="text" name="shareurl" value="' + model.public_url + '">';
+      htmlString += '<div class="g">';
+      htmlString += '<div class="g-cell--1of3">Share:</div>';
+      htmlString += '<div class="g-cell--2of3"><input type="text" name="shareurl" value="' + model.public_url + '" onClick="this.setSelectionRange(0, this.value.length)"></div>';
       htmlString += '</div>';
       $("#audioContainer").append(htmlString);
     }
