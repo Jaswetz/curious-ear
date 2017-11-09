@@ -2,55 +2,15 @@
 // requires momentjs
 (function($) {
   //
-  // Globals -------------------------------------------------------------------
-  //
-  var AUDIO_JSON_URL = "https://api.curiousear.com/audio/list?location=";
-  //
   // AudioPlayer ---------------------------------------------------------------
   //
   var AudioList;
   (function () {
 
-    function shuffle(array) {
-      var currentIndex = array.length, temporaryValue, randomIndex;
-
-      // While there remain elements to shuffle...
-      while (0 !== currentIndex) {
-
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-      }
-
-      return array;
-    }
-
     function getJSON (url, cb) {
       $.getJSON( url, function( data ) {
         cb(data);
       });
-    }
-    // Used to convert data depending on how it comes
-    //
-    // [ {}, {} ,{}] // curently
-    //
-    function dataConverter (dataIn) {
-      var dataOut = [];
-      if (dataIn instanceof Array) {
-        // shuffledDataIn = shuffle(dataIn);
-        // shuffledDataIn.forEach(function (model) {
-        //   dataOut.push(model);
-        // });
-        dataIn.forEach(function (model) {
-          dataOut.push(model);
-        });
-      }
-      return dataOut;
     }
     // Used to fix any changes that may happen as the API changes
     // {
@@ -95,7 +55,7 @@
 
     AudioList = function () {}
     AudioList.prototype = {
-      Create : function (url) {
+      Create : function (url, dataConverter) {
         getJSON(url, function (data) {
           var convertedData = dataConverter(data);
           convertedData.forEach(function (model) {
@@ -108,10 +68,51 @@
   //
   // Main ----------------------------------------------------------------------
   //
-  window.CreateAudioList = function (location) {
+  function passThroughDataConverter (dataIn) {
+    var dataOut = [];
+    if (dataIn instanceof Array) {
+      dataIn.forEach(function (model) {
+        dataOut.push(model);
+      });
+    }
+    return dataOut;
+  }
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
+  function shuffleDataConverter (dataIn) {
+    var dataOut = [];
+    if (dataIn instanceof Array) {
+      shuffledDataIn = shuffle(dataIn);
+      shuffledDataIn.forEach(function (model) {
+        dataOut.push(model);
+      });
+    }
+    return dataOut;
+  }
+  window.CreateAudioList = function (location, featured) {
     $(document).ready(function() {
       audioList = new AudioList();
-      audioList.Create(AUDIO_JSON_URL + location);
+      if (featured) {
+        audioList.Create("http://api.curiousear.com/audio/featured", shuffleDataConverter);
+      } else {
+        audioList.Create("https://api.curiousear.com/audio/list?location=" + location, passThroughDataConverter);
+      }
     });
   }
 })($)
