@@ -53,8 +53,13 @@ var audioModel = (function($) {
          * @description - renders audio model to html
          */
         toHTML() {
-                var audioElement = `<div id="audio-element"></div><div id="background-animation"></div>`;
-                $('#audioContainer').append(audioElement);
+                var audioElement =
+                    `<div id="audio-element">
+                        <div id="wave-form-sphere">
+                            <button id="audio-element--button-init">Listen to Our Stories</button>
+                        </div>
+                    </div>`;
+                $('#audio-element--container').append(audioElement);
                 audioController.init();
             },
 
@@ -63,7 +68,8 @@ var audioModel = (function($) {
          * @description - initializes the audio component model.
          */
         init() {
-            audio.fetchStories(audio.AUDIO_JSON_URL);
+            // audio.fetchStories(audio.AUDIO_JSON_URL);
+            audio.toHTML();
         },
 
     };

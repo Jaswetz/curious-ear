@@ -12,8 +12,7 @@
     </div>
     <div class="page--content">
       <div id="audioContainer" class="g--full g--1of1 g audio margin-top">
-        <div id="audio-initializer">
-          <button class="btn">Listen to Our Stories</button>
+        <div id="audio-element--container">
         </div>
       </div>
     </div>

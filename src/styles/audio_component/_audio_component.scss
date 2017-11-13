@@ -1,15 +1,29 @@
-#audio-initializer {
+#audio-element--container {
+  position: relative;
   text-align: center;
   margin: 0 auto;
-}
-#audio-element {
   width: 100%;
 }
 
-#background-animation{
-  top: 50%;
+#audio-element {
+  position: absolute;
+  top: 0;
+  width: 0;
+  background-color: rgba(100,100,100, 0.0);
+  height: 600px;
+  margin: 0 auto;
   transform: translateY(-50%);
-  left: -100px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+#wave-form-sphere{
+  top: 45%;
+  transform: translate(-50%, -50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   position: absolute;
   width:200px;
   height: 200px;
@@ -17,8 +31,20 @@
   border-radius: 50%;
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  opacity: 0;
+  //opacity: 0;
   z-index: 9999;
+
+  #audio-element--button-init {
+    border: none;
+    background: none;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left:0;
+    right:0;
+    margin: 0 auto;
+  }
 }
 
 #waveform-player {
@@ -29,6 +55,30 @@
   transform: translateY(-50%);
 }
 
-.square {
-  background-color: red;
+
+
+#controls-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -50px;
 }
+
+#controls-expander {
+  position: absolute;
+  width: 200px;
+  top: -40px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#controls-minimizer {
+  width: 30px;
+  height: 30px;
+  float: right;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 10px;
+  cursor: pointer;
+}
+
