@@ -1,14 +1,16 @@
-/**
- * Created by keenan on 10/21/17.
- */
 
 var audioController = (function($) {
 
     var controller = {
+        audioPlaying: false,
+        wavesurfer: null,
+        playingAudioIndex: null,
+        previousPlayingAudio: null,
+
         audioElementPlayControls :
             `<div id="controls-container">
                     <button id="controls-prev" class="controls">PREV</button>
-                    <button id="controls-play" class="controls">PLAY</button>
+                    <button id="controls-play" class="controls"></button>
                     <button id="controls-next" class="controls">NEXT</button>
                 </div>`,
 
@@ -40,9 +42,29 @@ var audioController = (function($) {
         appendControls() {
             $('#audio-element').prepend(controller.audioElementControlsExpander);
             $('#wave-form-sphere').append(controller.audioElementPlayControls);
+            $('#controls-play').on('click', controller.handlePlayAndPause);
+            $('#controls-next').on('click', controller.handlePlayNext);
             $('#controls-expander').on('click', function() {
                 controller.expandControls();
             });
+            controller.queRandomStory();
+        },
+
+        handlePlayAndPause() {
+            if (controller.audioPlaying) {
+                $('#controls-play').removeClass('pause');
+                controller.wavesurfer.pause();
+                controller.audioPlaying = false;
+            } else {
+                $('#controls-play').addClass('pause');
+                controller.wavesurfer.play();
+                controller.audioPlaying = true;
+            }
+        },
+
+        handlePlayNext() {
+            controller.wavesurfer.destroy();
+            controller.queRandomStory();
         },
 
         expandControls() {
@@ -80,21 +102,23 @@ var audioController = (function($) {
         },
 
         queRandomStory() {
+            controller.previousPlayingAudio = controller.playingAudio;
             var randomStory = audioModel.stories[Math.floor(Math.random() * audioModel.stories.length)];
             controller.loadRandomStory(randomStory.public_url);
+            controller.playingAudio = randomStory;
         },
 
         loadRandomStory(randomStory) {
-            $("#wave-form-sphere").append(`<div id="waveform-player"></div>`);
-            var wavesurfer = WaveSurfer.create({
+            controller.wavesurfer = WaveSurfer.create({
                 container: '#waveform-player',
                 hideScrollbar: true,
                 scrollParent: true,
                 progressColor: '#36b084'
             });
-            wavesurfer.load(randomStory);
-            wavesurfer.on('ready', function () {
-                wavesurfer.play();
+
+            controller.wavesurfer.load(randomStory);
+            controller.wavesurfer.on('ready', function () {
+                controller.handlePlayAndPause();
             });
         },
 

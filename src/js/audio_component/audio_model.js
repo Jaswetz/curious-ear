@@ -57,6 +57,7 @@ var audioModel = (function($) {
                     `<div id="audio-element">
                         <div id="wave-form-sphere">
                             <button id="audio-element--button-init">Listen to Our Stories</button>
+                            <div id="waveform-player"></div>
                         </div>
                     </div>`;
                 $('#audio-element--container').append(audioElement);
@@ -68,10 +69,8 @@ var audioModel = (function($) {
          * @description - initializes the audio component model.
          */
         init() {
-            // audio.fetchStories(audio.AUDIO_JSON_URL);
-            audio.toHTML();
+            audio.fetchStories(audio.AUDIO_JSON_URL);
         },
-
     };
 
 
@@ -81,5 +80,6 @@ var audioModel = (function($) {
     };
 
 })(jQuery);
+
 
 audioModel.init();

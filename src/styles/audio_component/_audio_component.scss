@@ -61,7 +61,24 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -50px;
+  bottom: -80px;
+
+  .controls {
+    background-color: transparent;
+    border: none;
+  }
+
+  #controls-play {
+    width: 54px;
+    height: 71px;
+    background-image: url(../images/audio_component/play.svg);
+  }
+
+  #controls-play.pause {
+    width: 54px;
+    height: 69px;
+    background-image: url(../images/audio_component/pause.svg);
+  }
 }
 
 #controls-expander {
