@@ -1,0 +1,31 @@
+{
+  "name": "audio_component",
+  "version": "1.0.0",
+  "description": "a simple audio component module for playing stories of the curious ear art project",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Keenan Wells",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.5.1",
+    "babel-eslint": "^6.0.4",
+    "babel-preset-env": "^1.6.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.12.0",
+    "gulp-uglify": "^2.1.0",
+    "gulp-util": "^3.0.6",
+    "run-sequence": "^1.1.1"
+  }
+}
