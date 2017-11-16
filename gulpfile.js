@@ -46,6 +46,10 @@ svgSrc = sourceDir + 'svg';
 svgDest = destDir + 'svg';
 svgGlob = '**/*.svg';
 
+
+
+
+
 // Define browser-sync ports
 browserPort = 3000;
 guidePort = 3002;
@@ -144,13 +148,13 @@ gulp.task('nunjucks', function() {
 gulp.task('imgProcess', function() {
     gulp.src(imgSrc)
         .pipe(gulpif(isProd, imagemin()))
-        .pipe(gulp.dest(imgDest))
+        .pipe(gulp.dest(imgDest));
 });
 
 // Move Audio Files
 gulp.task('audio', function() {
     gulp.src(audioSrc)
-        .pipe(gulp.dest(audioDest))
+        .pipe(gulp.dest(audioDest));
 });
 
 // Create SVG Sprite

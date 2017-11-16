@@ -17,7 +17,6 @@
       </div>
     </div>
   </main>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.min.js"></script>
     {% include "partials/footer.nunjucks" %}
 
 {% endblock %}

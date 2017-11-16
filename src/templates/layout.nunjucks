@@ -11,6 +11,7 @@
     <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="audio_component/dist/css/app.css">
   </head>
 
   <body>
@@ -24,6 +25,8 @@
 
     {#<script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.min.js"></script>#}
     <script src="js/app.js"></script>
+    <script src="audio_component/dist/js/app.js"></script>
+
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
