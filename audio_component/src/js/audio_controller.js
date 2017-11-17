@@ -66,13 +66,29 @@ var audioController = (function($) {
         handlePlayNext() {
             controller.wavesurfer.destroy();
             controller.handlePlayOrPause();
-            controller.queRandomAudio();
+            controller.queNextAudio();
+        },
+
+        queNextAudio() {
+            var nextAudioIndex = audioModel.stories.map((story) => story.public_url).indexOf(controller.playingAudio.public_url) + 1;
+            var nextAudio = audioModel.stories[nextAudioIndex];
+            controller.previousPlayingAudio = controller.playingAudio;
+            controller.playingAudio = nextAudio;
+            controller.loadAudio(nextAudio);
         },
 
         handlePlayPrev() {
             controller.wavesurfer.destroy();
             controller.handlePlayOrPause();
-            controller.loadAudio(controller.previousPlayingAudio);
+            if (controller.playingAudio === controller.previousPlayingAudio) {
+                var prevAudioIndex =  audioModel.stories.map((story) => story.public_url).indexOf(controller.playingAudio.public_url) - 1;
+                var prevAudio = audioModel.stories[prevAudioIndex];
+                controller.playingAudio = prevAudio;
+                controller.loadAudio(prevAudio);
+            } else {
+                controller.playingAudio = controller.previousPlayingAudio;
+                controller.loadAudio(controller.previousPlayingAudio);
+            }
         },
 
         expandControls() {
@@ -110,7 +126,6 @@ var audioController = (function($) {
         },
 
         queRandomAudio() {
-            controller.previousPlayingAudio = controller.playingAudio;
             var randomStory = audioModel.stories[Math.floor(Math.random() * audioModel.stories.length)];
             controller.loadAudio(randomStory);
             controller.playingAudio = randomStory;

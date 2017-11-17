@@ -18,8 +18,9 @@ const dist = './dist/',
     jsDist = dist + 'js/',
     scssSrc = src + 'scss/*.scss',
     cssDist = dist + 'css/',
-    imgSrc = src + 'img',
-    imgDest = dist + 'img/';
+    imgSrc = src + 'img/*',
+    imgDest = dist + 'img/',
+    distSrc = dist + '**/*';
 
 
 function handleErrors(error) {
@@ -69,14 +70,19 @@ gulp.task('clean', function() {
     return del([dist]);
 });
 
+gulp.task('dist_copy', function() {
+   gulp.src(distSrc)
+       .pipe(gulp.dest('../dest/audio_component/dist/'));
+});
+
 // Files are automatically watched
 gulp.task('watch', function() {
-    gulp.watch(scssSrc, ['sass']);
-    gulp.watch([jsSrc], ['js']);
+    gulp.watch(scssSrc, ['sass', 'dist_copy']);
+    gulp.watch([jsSrc], ['js', 'dist_copy']);
 });
 
 // Gulp development task
 gulp.task('dev', ['clean', ], function(cb) {
     cb = cb || function() {};
-    return runSequence(['sass', 'js', 'imgProcess'], 'watch', cb);
+    return runSequence(['sass', 'js', 'imgProcess', 'dist_copy'], 'watch', cb);
 });

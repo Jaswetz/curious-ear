@@ -71,15 +71,16 @@
   #controls-play {
     width: 54px;
     height: 71px;
-    background-image: url(../img/audio_component/play.svg);
+    background-image: url(https://storage.googleapis.com/audio_component/static/img/play.svg);
   }
 
   #controls-play.pause {
     width: 54px;
     height: 69px;
-    background-image: url(../img/audio_component/pause.svg);
+    background-image: url(https://storage.googleapis.com/audio_component/static/img/pause.svg);
   }
 }
+
 
 #controls-expander {
   position: absolute;

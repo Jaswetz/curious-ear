@@ -4,6 +4,7 @@
 
 var audioModel = (function($) {
 
+
     /**
      * @property - configuration to be used for audio module, TBD
      */
@@ -12,7 +13,6 @@ var audioModel = (function($) {
         story_type: null,
         stories: [],
         AUDIO_JSON_URL: "http://api.curiousear.com/audio/featured",
-
         /**
          * @method
          * @description -
