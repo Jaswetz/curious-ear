@@ -4,9 +4,9 @@ var audioController = (function($) {
     var controller = {
         audioPlaying: false,
         wavesurfer: null,
-        playingAudioIndex: null,
+        currentAudioIndex: null,
+        nextAudioIndex: null,
         previousPlayingAudio: null,
-
         audioElementPlayControls :
             `<div id="controls-container">
                     <button id="controls-prev" class="controls">PREV</button>
@@ -15,14 +15,14 @@ var audioController = (function($) {
                 </div>`,
 
         audioElementControlsExpander :
-        `<div id="controls-expander"><button>See more stories</button></div>`,
+            `<div id="controls-expander"><button>See more stories</button></div>`,
 
         audioElementControlsMinimizer:
-        `<div id="controls-minimizer">X</div>`,
+            `<div id="controls-minimizer">X</div>`,
 
         auidioElementStoriesList:
-        `<div id="audio-list-container">
-        </div>`,
+            `<div id="audio-list-container">
+            </div>`,
 
 
         animateIntroStart() {
@@ -40,14 +40,14 @@ var audioController = (function($) {
         },
 
         appendControls() {
-            $('#audio-element').prepend(controller.audioElementControlsExpander);
+            // $('#audio-element').prepend(controller.audioElementControlsExpander);
             $('#wave-form-sphere').append(controller.audioElementPlayControls);
             $('#controls-play').on('click', controller.handlePlayOrPause);
             $('#controls-next').on('click', controller.handlePlayNext);
             $('#controls-prev').on('click', controller.handlePlayPrev);
-            $('#controls-expander').on('click', function() {
-                controller.expandControls();
-            });
+            // $('#controls-expander').on('click', function() {
+            //     controller.expandControls();
+            // });
             controller.queRandomAudio();
         },
 
@@ -64,31 +64,38 @@ var audioController = (function($) {
         },
 
         handlePlayNext() {
+            var nextAudio,
+                nextAudioIndex,
+                currentAudioIndex = audioModel.stories.map((story) => story.public_url).indexOf(controller.playingAudio.public_url);
+            console.log('currentAudioIndex', currentAudioIndex);
             controller.wavesurfer.destroy();
             controller.handlePlayOrPause();
-            controller.queNextAudio();
-        },
-
-        queNextAudio() {
-            var nextAudioIndex = audioModel.stories.map((story) => story.public_url).indexOf(controller.playingAudio.public_url) + 1;
-            var nextAudio = audioModel.stories[nextAudioIndex];
+            if (currentAudioIndex === audioModel.stories.length - 1) {
+                nextAudioIndex = 0;
+            } else {
+                nextAudioIndex = currentAudioIndex + 1;
+            }
+            nextAudio = audioModel.stories[nextAudioIndex];
             controller.previousPlayingAudio = controller.playingAudio;
             controller.playingAudio = nextAudio;
             controller.loadAudio(nextAudio);
         },
 
+
         handlePlayPrev() {
+            var prevAudio,
+                prevAudioIndex,
+                currentAudioIndex = audioModel.stories.map((story) => story.public_url).indexOf(controller.playingAudio.public_url);
             controller.wavesurfer.destroy();
             controller.handlePlayOrPause();
-            if (controller.playingAudio === controller.previousPlayingAudio) {
-                var prevAudioIndex =  audioModel.stories.map((story) => story.public_url).indexOf(controller.playingAudio.public_url) - 1;
-                var prevAudio = audioModel.stories[prevAudioIndex];
-                controller.playingAudio = prevAudio;
-                controller.loadAudio(prevAudio);
+            if (currentAudioIndex === 0) {
+                prevAudioIndex = audioModel.stories.length - 1;
             } else {
-                controller.playingAudio = controller.previousPlayingAudio;
-                controller.loadAudio(controller.previousPlayingAudio);
+                prevAudioIndex =  currentAudioIndex - 1;
             }
+            prevAudio = audioModel.stories[prevAudioIndex];
+            controller.playingAudio = prevAudio;
+            controller.loadAudio(prevAudio);
         },
 
         expandControls() {
@@ -146,7 +153,7 @@ var audioController = (function($) {
         },
 
         init() {
-            $('#audio-element--button-init').on('click', (e) => {
+            $('#audio-element--button-init').one('click', (e) => {
                 controller.animateIntroStart();
             });
         }

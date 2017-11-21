@@ -16,9 +16,15 @@
   left: 0;
   right: 0;
   z-index: 999;
+
+  * {
+    outline: none;
+  }
 }
 
 #wave-form-sphere{
+  //position: relative;
+
   top: 45%;
   transform: translate(-50%, -50%);
   left: 0;
@@ -27,12 +33,24 @@
   position: absolute;
   width:200px;
   height: 200px;
-  background-color: #000000;
+  //background-color: #000000;
   border-radius: 50%;
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  //opacity: 0;
+  background: url('/audio_component/dist/img/img--ear.jpg') no-repeat;
   z-index: 9999;
+
+  &:before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+    opacity: .6;
+  }
 
   #audio-element--button-init {
     border: none;
@@ -44,6 +62,12 @@
     left:0;
     right:0;
     margin: 0 auto;
+    cursor: pointer;
+    transition: color 1s;
+
+    &:hover {
+      color: pink;
+    }
   }
 }
 

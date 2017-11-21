@@ -13,20 +13,19 @@ var audioModel = (function($) {
         story_type: null,
         stories: [],
         AUDIO_JSON_URL: "http://api.curiousear.com/audio/featured",
+
         /**
          * @method
-         * @description -
+         * @description - fetches audio json from google cloud
+         * @param - url for audio json
          */
-
         fetchStories(url) {
         $.getJSON(url , (stories) => {
             stories.forEach(function(story){
                 audio.stories.push(audio.formatData(story));
             });
-
         })
         .done(() => {
-            console.log(audio.stories)
             audio.toHTML();
         })
         .fail((err) => {

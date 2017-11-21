@@ -70,7 +70,7 @@ gulp.task('clean', function() {
     return del([dist]);
 });
 
-gulp.task('dist_copy', function() {
+gulp.task('dist_copy', ['sass', 'js'], function() {
    gulp.src(distSrc)
        .pipe(gulp.dest('../dest/audio_component/dist/'));
 });
