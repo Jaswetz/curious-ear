@@ -14,9 +14,42 @@
       </p>
     </div>
 
-    {# <h3 class="margin-top">Current Events</h3> #}
+    <h3 class="margin-top">Upcoming Events</h3>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--whatnowpdx.jpg" alt="What Now PDX Logo">
+        </div>
+        <div class="media__body">
+          <h4 class="event__title">What Now PDX</h4>
+          <span class="event__date">November 21, 2017</span>
+          <p>
+            We are excited to be part of <a href="https://www.whatnowpdx.org/" target="__blank">What Now PDX</a> this year!
+            {# <a href="http://whatnowpdx.curiousear.com/" target="__blank">Listen to stories here.</a> #}
+          </p>
+          <p>
+            On November 21st, 2016 2000 people joined together at Revolution Hall in Portland, Oregon to tell the world they were ready to get to work. Community leaders, artists, friends, and neighbors came together to put our fears and frustrations into positive action.
+          </p>
+        </div>
+      </div>
+    </div>
 
     <h3 class="margin-top">Past Events</h3>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images\img--friendship_health_center.png" alt="Friendship Health Center">
+        </div>
+        <div class="media__body">
+          <h4 class="event__title">Fall Stories at Friendship Health Center</h4>
+          <span class="event__date">November 7, 2017</span>
+          <p>
+            What are YOUR favorite fall stories? That’s what we asked the residents of <a href="https://www.facebook.com/FHC.PDX/" target="__blank">Friendship Health Center</a>, an assisted-living facility in SE Portland. Now you can hear some of their most cherished fall memories as you set out to create some of your own.
+            <a href="http://fallstories.curiousear.com/" target="__blank">Listen to stories here.</a>
+          </p>
+        </div>
+      </div>
+    </div>
     <div class="event">
       <div class="media">
         <div class="media__figure">
@@ -96,8 +129,8 @@
           <span class="event__date">April 14-16, 2017</span>
           <p>On Good Friday, April 14, Curious Ear will be featured at
             <a href="https://www.facebook.com/FHC.PDX/" target="__blank">Friendship Health Center</a>
-            assisted-living facility for a multigenerational family event. Listen to the stories recorded here:
-            <a href="http://easter2017.curiousear.com/" target="__blank">easter2017.curiousear.com</a>
+            assisted-living facility for a multigenerational family event.
+            <a href="http://easter2017.curiousear.com/" target="__blank">Listen to the stories recorded here.</a>
           </p>
         </div>
       </div>
