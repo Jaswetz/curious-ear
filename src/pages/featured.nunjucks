@@ -14,14 +14,12 @@
 
 
       <div id="audioContainer" class="g--full g--1of1 g audio margin-top">
-        <div id="audio-element--container">
-        </div>
       </div>
 
-      <div id="audioContainer" class="g--full g--1of1 g audio margin-top"></div>
+
       <script src="http://static.curiousear.com/js/vendor/moment.min.js"></script>
-      <script src="http://static.curiousear.com/js/main.js"></script>
-      <script>window.CreateAudioList(null, true);</script>
+      {#<script src="http://static.curiousear.com/js/main.js"></script>#}
+      {#<script>window.CreateAudioList(null, true);</script>#}
 
     </div>
   </main>

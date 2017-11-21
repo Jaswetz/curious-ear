@@ -1,57 +1,53 @@
 #audio-element--container {
-  position: relative;
   text-align: center;
   margin: 0 auto;
+  padding-bottom: 3rem;
   width: 100%;
 }
 
 #audio-element {
-  position: absolute;
-  top: 0;
-  width: 0;
+  //width: 200px;
   background-color: rgba(100,100,100, 0.0);
   height: 600px;
   margin: 0 auto;
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
-  z-index: 999;
 
   * {
     outline: none;
   }
 }
 
-#wave-form-sphere{
-  top: 45%;
-  transform: translate(-50%, -50%);
-  left: 0;
+#wave-form-sphere {
+  position: relative;
+  top: 50%;
+  bottom: 0;
+  left: 50%;
   right: 0;
-  margin: 0 auto;
-  position: absolute;
-  width:200px;
-  height: 200px;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  height: 0;
+  padding-bottom: 25%;
   border-radius: 50%;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background: url('/audio_component/dist/img/img--ear.jpg') no-repeat;
-  z-index: 9999;
+  text-align: center;
+  transition: all 1s ease;
 
-
-  &:after {
-    content: '';
+  .bg-img {
     position: absolute;
-    border-radius: 50%;
     top: 0;
-    right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1;
-    opacity: 0;
-    pointer-events: none;
-    background-size: cover !important;
+    right: 0;
+    border-radius: 50%;
     background-repeat: no-repeat !important;
-    background: url("/audio_component/dist/img/img--mouth.jpg")
+    background-size: cover !important;
+  }
+
+  #img-first {
+    background: url(/audio_component/dist/img/img--ear.jpg);
+  }
+
+  #img-second {
+    opacity: 0;
+    background: url(/audio_component/dist/img/img--mouth.jpg);
   }
 
   &:before {
@@ -62,6 +58,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 100;
     pointer-events: none;
     background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
     opacity: .6;
@@ -72,13 +69,15 @@
     background: none;
     color: #fff;
     position: absolute;
+    z-index: 200;
     top: 50%;
-    transform: translateY(-50%);
-    left:0;
-    right:0;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    right: 0;
     margin: 0 auto;
     cursor: pointer;
-    transition: color 1s;
+    transition: color .3s;
 
     &:hover {
       color: pink;
@@ -86,9 +85,18 @@
   }
 }
 
+#wave-form-sphere.grow {
+  width: 50%;
+  padding-bottom: 50%;
+}
+
+
 #waveform-player {
-  position: relative;
+  position: absolute;
+  z-index: 400;
   top: 50%;
+  left: 0;
+  right: 0;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -97,10 +105,10 @@
 
 
 #controls-container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -80px;
+
+  * {
+    outline: none;
+  }
 
   .controls {
     background-color: transparent;
@@ -110,13 +118,13 @@
   #controls-play {
     width: 54px;
     height: 71px;
-    background-image: url(https://storage.googleapis.com/audio_component/static/img/play.svg);
+    background-image: url(/audio_component/dist/img/play.svg);
   }
 
   #controls-play.pause {
     width: 54px;
     height: 69px;
-    background-image: url(https://storage.googleapis.com/audio_component/static/img/pause.svg);
+    background-image: url(/audio_component/dist/img/pause.svg);
   }
 }
 

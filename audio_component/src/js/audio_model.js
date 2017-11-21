@@ -53,13 +53,17 @@ var audioModel = (function($) {
          */
         toHTML() {
                 var audioElement =
-                    `<div id="audio-element">
-                        <div id="wave-form-sphere">
-                            <button id="audio-element--button-init">Listen to Our Stories</button>
-                            <div id="waveform-player"></div>
+                    `<div id="audio-element--container">
+                        <div id="audio-element">
+                            <div id="wave-form-sphere">
+                                <button id="audio-element--button-init">Listen to Our Stories</button>
+                                <div id="waveform-player"></div>
+                                <div class="bg-img" id="img-first"></div>
+                                <div class="bg-img" id="img-second"></div>
+                            </div>
                         </div>
                     </div>`;
-                $('#audio-element--container').append(audioElement);
+                $('#audioContainer').append(audioElement);
                 audioController.init();
             },
 

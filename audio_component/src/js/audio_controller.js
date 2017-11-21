@@ -2,11 +2,16 @@
 var audioController = (function($) {
 
     var controller = {
-        audioPlaying: false,
         wavesurfer: null,
+        audioPlaying: false,
         currentAudioIndex: null,
         nextAudioIndex: null,
         previousPlayingAudio: null,
+
+        /**
+         * @markup -
+         * @description -
+         */
         audioElementPlayControls :
             `<div id="controls-container">
                     <button id="controls-prev" class="controls">PREV</button>
@@ -14,53 +19,84 @@ var audioController = (function($) {
                     <button id="controls-next" class="controls">NEXT</button>
                 </div>`,
 
+        /**
+         * @markup -
+         * @description -
+         */
         audioElementControlsExpander :
             `<div id="controls-expander"><button>See more stories</button></div>`,
 
+        /**
+         * @markup -
+         * @description -
+         */
         audioElementControlsMinimizer:
             `<div id="controls-minimizer">X</div>`,
 
+        /**
+         * @markup -
+         * @description -
+         */
         auidioElementStoriesList:
             `<div id="audio-list-container">
             </div>`,
 
 
+        /**
+         * @method -
+         * @description -
+         */
         animateIntroStart() {
             $('#audio-element--button-init').fadeOut(500, () => {
-                var imageChange = anime({
-                    targets: '#wave-form-sphere',
-                    background: 'url("/audio_component/dist/img/img--mouth.jpg")',
+                var fadeeOut = anime({
+                    targets: '#img-first',
+                    opacity: 0,
+                    delay: 100,
                     duration: '1000',
                     easing: 'linear',
+                    begin: () => backgroundFadeIn(),
                     complete: () => introBallGrow()
                 });
 
-                var introBallGrow = () => {
-                    var introBall = anime({
-                        targets: '#wave-form-sphere',
-                        width: '500px',
-                        height: '500px',
+                var backgroundFadeIn = () => {
+                    var imageFadeIn= anime({
+                        targets: '#img-second',
+                        opacity: '1',
                         duration: '1000',
-                        easing: 'linear',
-                        complete: () => controller.appendControls()
+                        easing: 'linear'
                     });
-                }
+                };
+
+                var introBallGrow = () => {
+                    $('#wave-form-sphere').addClass('grow');
+                    setTimeout(() => controller.appendControls(), 1000);
+                };
             });
 
         },
 
+
+        /**
+         * @method -
+         * @description -
+         */
         appendControls() {
             // $('#audio-element').prepend(controller.audioElementControlsExpander);
-            $('#wave-form-sphere').append(controller.audioElementPlayControls);
+            $('#audio-element--container').append(controller.audioElementPlayControls);
             $('#controls-play').on('click', controller.handlePlayOrPause);
             $('#controls-next').on('click', controller.handlePlayNext);
             $('#controls-prev').on('click', controller.handlePlayPrev);
-            // $('#controls-expander').on('click', function() {
-            //     controller.expandControls();
-            // });
+            $('#controls-expander').on('click', function() {
+                controller.expandControls();
+            });
             controller.queRandomAudio();
         },
 
+
+        /**
+         * @method -
+         * @description -
+         */
         handlePlayOrPause() {
             if (controller.audioPlaying) {
                 $('#controls-play').removeClass('pause');
@@ -73,11 +109,15 @@ var audioController = (function($) {
             }
         },
 
+
+        /**
+         * @method -
+         * @description -
+         */
         handlePlayNext() {
             var nextAudio,
                 nextAudioIndex,
                 currentAudioIndex = audioModel.stories.map((story) => story.public_url).indexOf(controller.playingAudio.public_url);
-            console.log('currentAudioIndex', currentAudioIndex);
             controller.wavesurfer.destroy();
             controller.handlePlayOrPause();
             if (currentAudioIndex === audioModel.stories.length - 1) {
@@ -92,6 +132,10 @@ var audioController = (function($) {
         },
 
 
+        /**
+         * @method -
+         * @description -
+         */
         handlePlayPrev() {
             var prevAudio,
                 prevAudioIndex,
@@ -108,6 +152,10 @@ var audioController = (function($) {
             controller.loadAudio(prevAudio);
         },
 
+        /**
+         * @method -
+         * @description -
+         */
         // expandControls() {
         //     $('#controls-expander').fadeOut(500, () => {
         //         expandElementContainer = anime({
@@ -121,6 +169,10 @@ var audioController = (function($) {
         //     });
         // },
 
+        /**
+         * @method -
+         * @description -
+         */
         // appendMinimizer() {
         //     $('#audio-element').append(controller.audioElementControlsMinimizer);
         //     $('#controls-minimizer').on('click', function(e) {
@@ -128,6 +180,11 @@ var audioController = (function($) {
         //     });
         // },
 
+
+        /**
+         * @method -
+         * @description -
+         */
         // minimizeControls() {
         //     $('#controls-minimizer').fadeOut(500, () => {
         //         $('#controls-minimizer').remove();
@@ -142,18 +199,28 @@ var audioController = (function($) {
         //     });
         // },
 
+        /**
+         * @method -
+         * @description -
+         */
         queRandomAudio() {
             var randomStory = audioModel.stories[Math.floor(Math.random() * audioModel.stories.length)];
             controller.loadAudio(randomStory);
             controller.playingAudio = randomStory;
         },
 
+        /**
+         * @method -
+         * @description -
+         */
         loadAudio(audio) {
             controller.wavesurfer = WaveSurfer.create({
                 container: '#waveform-player',
+                backEnd: 'MediaElement',
                 hideScrollbar: true,
                 scrollParent: true,
-                progressColor: '#36b084'
+                progressColor: '#36b084',
+                cursorColor: '#36b084'
             });
 
             controller.wavesurfer.load(audio.public_url);
@@ -162,12 +229,15 @@ var audioController = (function($) {
             });
         },
 
+        /**
+         * @method -
+         * @description -
+         */
         init() {
             $('#audio-element--button-init').one('click', (e) => {
                 controller.animateIntroStart();
             });
         }
-
     };
 
     return {
