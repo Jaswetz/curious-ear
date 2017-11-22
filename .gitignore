@@ -7,3 +7,4 @@ node_modules
 dest
 *.node
 styleguide
+package-lock.json
