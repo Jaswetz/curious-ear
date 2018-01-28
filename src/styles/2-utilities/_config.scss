@@ -2,6 +2,10 @@
 // Config //
 ///////////
 
+// Debug
+$wireframe: false;
+$baseline-grid: false;
+
 // Font Weights //
 $font-weight--thin: lighter;
 $font-weight--medium: normal;
@@ -24,16 +28,17 @@ $text-size--mega: 4.768em;
 $base__font-size: $text-size;
 $base__line-height: 1.875rem;
 $base__font-weight: $font-weight--medium;
+$base__font-color: $color--grey--dark;
 
 // Font Stacks //
 $font-family--mono: 'Playfair Display SC', serif;
-$font-family--primary: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-$font-family--secondary: 'Megrim', cursive;
+$font-family--primary: 'Roboto', sans-serif;
+$font-family--secondary: 'Nunito', sans-serif;
 
 // Headings //
 $heading--font-family: $font-family--secondary;
-$heading--font-weight: $font-weight--bold;
-$heading--line-height: $base__line-height * 3;
+$heading--font-weight: $font-weight--thin;
+$heading--line-height: $base__line-height * 1.75;
 $heading--color: grey;
 
 // Spacing //
@@ -50,6 +55,7 @@ $tablet: 768px; // iPhone 6
 
 // Border
 $border-width: .1rem;
+$border-radius: .25rem;
 
 // Z Index //
 $zindex--01: -1;

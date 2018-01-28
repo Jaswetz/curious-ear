@@ -4,27 +4,35 @@
 
 
 html {
-  font-size: 100%;
-
-  &.is-lineHeight {
-    background-image: url(http://basehold.it/i/30);
+  font-size: 80%;
+  @if $baseline-grid == true {
+    &.is-lineHeight {
+      background-image: url(http://basehold.it/i/24);
+    }
   }
-
-  @media (max-width: 50em) {
-    font-size: 75%;
+  @include mq(tablet) {
+    font-size: 90%;
+    @if $baseline-grid == true {
+      &.is-lineHeight {
+        background-image: url(http://basehold.it/i/27);
+      }
+    }
   }
-
-  @media (max-width: 37.5em) {
-    font-size: 50%;
+  @include mq(desktop) {
+    font-size: 100%;
+    @if $baseline-grid == true {
+      &.is-lineHeight {
+        background-image: url(http://basehold.it/i/30);
+      }
+    }
   }
-
-
-  /* @media (min-width: 37.5em)  { @content ; } */
-  /* @media (max-width: 37.5em)  { @content ; } */
 }
 
 body {
   line-height: $base__line-height;
+  font-family: $font-family--primary;
+  font-size: $text-size;
+  color: $base__font-color;
 }
 
 // Resets margins
@@ -39,10 +47,15 @@ p {
   margin: 0;
 }
 
-
 p {
-  font-size: $text-size;
   margin-bottom: $spacing;
+  @extend .optimal-length;
+}
+
+p,
+ul,
+li {
+    color: lighten($color--black, 35%);
 }
 
 h1,
@@ -59,16 +72,19 @@ h6 {
 h1,
 .h1 {
   font-size: $text-size--mega;
+  line-height: $base__line-height * 3;
 }
 
 h2,
 .h2 {
   font-size: $text-size--giant;
+  margin-bottom: $spacing;
 }
 
 h3,
 .h3 {
   font-size: $text-size--xxlarge;
+  margin-bottom: $spacing--small;
 }
 
 h4,

@@ -1,0 +1,36 @@
+.page-intro,
+.page--content {
+  margin-right: -2.5rem;
+  margin-left: -2.5rem;
+  margin-bottom: $spacing--large;
+  padding: $spacing $spacing--large;
+  border-bottom: 1px solid darken($color--grey--light, 2%);
+  background: $color--white;
+
+  @include mq(mobileonly) {
+    margin-top: $spacing;
+  }
+
+  @include mq(desktop) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.home {
+  .page-intro {
+    margin-top: -$spacing;
+    p {
+      margin: 0;
+    }
+  }
+}

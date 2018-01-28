@@ -1,3 +1,14 @@
 .text-shadow--blue {
   text-shadow: 0.125rem 0.125rem #0495d5;
 }
+
+.theme--callout {
+  background: white;
+  border: darken($color--grey--light, 2%) 1px solid;
+}
+
+
+.img--rounded {
+      border-radius: 50%;
+      border: $border-width $color--white solid;
+}

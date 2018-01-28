@@ -11,7 +11,13 @@
 // Styleguide 6.4.1
 
 .optimal-length {
-  max-width: 70ch;
+  max-width: rem(800px);
+}
+
+.optimal-length--center {
+  max-width: rem(800px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .text-align--center {

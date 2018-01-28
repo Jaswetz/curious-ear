@@ -1,0 +1,113 @@
+<!-- about.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+    <div class="about--active">
+        {% include "partials/header.nunjucks" %}
+    </div>
+    <main>
+        <div class="page-intro">
+            <h2>Who we are</h2>
+            <p>Curious Ear is a collective that was formed to bring people together.</p>
+            <p>In a society that is so often marked by divisions, we aim to create bridges, creating spaces for people to be heard, to listen and connect. The more we communicate, the more we understand and less we fear.</p>
+            <p>Curious Ear is by a group of Portland locals seeking better understanding of one another.
+            </p>
+        </div>
+        <div class="g--full g--1of2--medium g--1of3--xlarge g g--gutters profiles">
+        <li class="g-cell">
+            <div class="profile__title">
+                <h3 class="h5">Travis Abels</h3>
+                <h4 class="h6">Artistic Director</h4>
+            </div>
+            <div class="profile">
+                <img src="images/img--travis.png" alt="Travis Abels" class="profile__img">
+                <p class="profile__content">
+                    <b>Travis Abels</b>, Curious Ear’s artistic director, oversees the creative development of the project. In his work as film editor, writer and artist--as well as co-creator of multisensory storytelling experience “Or Something Like That,” which
+                    launched in Portland last year--Travis uses the power of story to build compassion and break down barriers that divide us.</p>
+            </div>
+        </li>
+        <li class="g-cell">
+<div class="profile__title">
+            <h3 class="h5">Jocelyn Brady</h3>
+            <h4 class="h6">Producer</h4>
+        </div>
+            <div class="profile">
+                <img src="images/img--jocelyn.jpg" alt="Jocelyn Brady" class="profile__img">
+                <p class="profile__content">
+                    <b>Jocelyn Brady</b>
+                    blends her creative chops with business management skills to lead Curious Ear’s content development and project coordination. Her obsession with story--and passion for uplifting people through language--transpires in her work as brand voice
+                    consultant and co-host of Party Time, a local storytelling and comedy show.
+                </p>
+            </div>
+        </li>
+        <li class="g-cell">
+<div class="profile__title">
+            <h3 class="h5">Jason Swetzoff</h3>
+            <h4 class="h6">UX / Front-End Dev</h4>
+        </div>
+            <div class="profile">
+                <img src="images/img--jason.jpg" alt="Jason Swetzoff" class="profile__img">
+                <p class="profile__content">
+                    <b>Jason Swetzoff</b>
+                    is fascinated by technology that’s built around--and helps build upon--empathy for the end user. An avid outdoorsman and active member of the improv community, Jason seeks to restore the childlike wonder we all possess, so we can see more
+                    opportunities to explore, co-create and connect. He leads Curious Ear’s user experience and front-end development.
+                </p>
+            </div>
+        </li>
+        <li class="g-cell">
+<div class="profile__title">
+            <h3 class="h5">Dimitrii Pokrovskii</h3>
+            <h4 class="h6">Development Lead</h4>
+        </div>
+            <div class="profile">
+                <img src="images/img--dimitrii.jpg" alt="Dimitrii Pokrovskii" class="profile__img">
+                <p class="profile__content">
+                    <b>Dimitri Pokrovskii</b>, creative technologist, leads the development of our interactive software applications. <a href="http://www.engineering-bear.com" target="_new">See his other work here.</a></p>
+            </div>
+        </li>
+        <li class="g-cell">
+            <div class="profile__title">
+            <h3 class="h5">Keenan Wells</h3>
+            <h4 class="h6">Mobile app Developer</h4>
+        </div>
+            <div class="profile">
+                <img src="images/img--keenan.jpg" alt="Keenan Wells" class="profile__img">
+                <p class="profile__content">
+                    <b>Keenan Wells</b>, mobile app developer, is insatiably curious about the world and how to create opportunities for the underserved. His work as a special educator and volunteer led him to Australia, New Zealand, Japan and Kenya, culminating in
+                    finding and funding schooling for the deaf.
+                </p>
+            </div>
+        </li>
+        <li class="g-cell">
+            <div class="profile__title">
+            <h3 class="h5">Matt Borowiec</h3>
+            <h4 class="h6">Software Engineer</h4>
+
+            </div>
+            <div class="profile">
+                <img src="images/img--matt.jpg" alt="Matt Borowiec" class="profile__img">
+                <p class="profile__content">
+                    <b>Matt Borowiec</b>
+                    is Curious Ear’s software engineer, focused on backend application development. A natural introvert with the desire to inspire connection, Matt divides his time between backcountry hiking, cross-state motorcycling and spending most of his Saturdays
+                    helping kids learn code so they can use their skills … for good.
+                </p>
+            </div>
+        </li>
+        <li class="g-cell">
+            <div class="profile__title">
+            <h3 class="h5">Marc Girouard</h3>
+            <h4 class="h6">Graphic Design / Animation</h4>
+        </div>
+            <div class="profile">
+                <img src="images/img--marc.jpg" alt="Marc Girouard" class="profile__img">
+                <p class="profile__content">
+                    <b>Marc Girouard</b>, animator and designer, heads up Curious Ear’s graphic design and application animation. As a board member of Flight 64 (a non-profit cooperative print space), coordinator of a local artist collective, and collaborator on
+                    projects such as “Or Something Like That,” Marc seeks to bring people together in celebration of the arts--and the artist living within all of us.
+                </p>
+            </div>
+        </li>
+
+    </ul>
+</main>
+{% include "partials/footer.nunjucks" %}
+{% endblock %}

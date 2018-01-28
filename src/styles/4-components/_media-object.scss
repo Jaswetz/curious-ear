@@ -1,0 +1,51 @@
+.media {
+  &__body {
+    > p {
+      margin-bottom: 0;
+    }
+  }
+  @include mq(mobileonly) {
+    &__figure {
+
+      > img {
+        margin-bottom: $spacing;
+      }
+    }
+  }
+  @include mq(phablet) {
+    display: flex;
+    align-items: center;
+
+    &__figure {
+      margin-right: $spacing;
+
+      > img {
+        width: rem(250px);
+      }
+    }
+    &__body {
+      flex: 1;
+    }
+  }
+}
+
+.media {
+  @include mq(phablet) {
+    align-items: flex-start;
+  }
+}
+
+.media--reverse {
+   @include mq(phablet) {
+     .media__body {
+       text-align: right;
+     }
+    flex-direction: row-reverse;
+    .media__figure {
+      margin-right: 0;
+      margin-left: $spacing;
+
+    }
+
+  }
+}

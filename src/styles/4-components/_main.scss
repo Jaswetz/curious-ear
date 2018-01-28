@@ -1,0 +1,35 @@
+main {
+  margin-right: $spacing--xsmall;
+  margin-left: $spacing--xsmall;
+  padding-top: $spacing;
+  padding-right: $spacing;
+  padding-left: $spacing;
+  color: $color--grey--dark;
+  background: $color--grey--light;
+
+  @include mq(tablet) {
+    margin-right: $spacing;
+    margin-left: $spacing;
+    padding-right: $spacing--large;
+    padding-left: $spacing--large;
+  }
+  @include mq(desktop) {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  h2 {
+    color: $color--purple;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.intro {
+  .intro--g:first-child {
+    width: 10%;
+  }
+}
