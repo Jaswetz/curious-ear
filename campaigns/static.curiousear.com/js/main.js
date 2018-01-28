@@ -1,6 +1,9 @@
 // requires jQuery
 // requires momentjs
 (function($) {
+
+  var DOM_CONTAINER = "#audioContainer";
+  var ROOT_URL = "http://static.curiousear.com/";
   //
   // AudioPlayer ---------------------------------------------------------------
   //
@@ -20,6 +23,7 @@
     //   length_in_seconds: 23,
     //   location_recorded: "friendship-health-easter"
     // }
+    var modelConverterIndex = 0;
     function modelConverter (modelIn) {
       var modelOut = {};
       if (modelIn instanceof Object) {
@@ -28,6 +32,8 @@
         modelOut.timestamp = moment.utc(modelIn.timestamp).local().format("dddd, MMMM Do YYYY, h:mm a") || "No Time Stamp";
         modelOut.public_url = modelIn.public_url || "#";
         modelOut.duration = recordingDuration.humanize();
+        modelOut.htmlId = "audio" + modelConverterIndex;
+        modelConverterIndex++;
         // get filename & create share url
         var parts = modelIn.public_url.split("/");
         var filename = parts[parts.length - 1];
@@ -38,10 +44,10 @@
 
     function createAudioDomElement(model) {
       var htmlString = '';
-      htmlString += '<p>' + model.timestamp + "</p>";
-      htmlString += '<p>' + model.duration + "</p>";
+      // htmlString += '<p>' + model.timestamp + "</p>";
+      // htmlString += '<p>' + model.duration + "</p>";
       htmlString += '<div class="g-cell audio__item margin-bottom--small">';
-      htmlString += '<audio controls="controls" preload="none">';
+      htmlString += '<audio id="' + model.htmlId + '" controls="controls" preload="none">';
       htmlString += '<source src="' + model.public_url + '">';
       htmlString += '</audio>';
       htmlString += '</div>';
@@ -50,21 +56,90 @@
       htmlString += '<div class="g-cell--1of3"><a href="'+ model.share_url +'" target="__blank" class="footer__link">Share</a>:</div>';
       htmlString += '<div class="g-cell--2of3"><input type="text" name="shareurl" value="' + model.share_url + '" onClick="this.setSelectionRange(0, this.value.length)"></div>';
       htmlString += '</div>';
-      $("#audioContainer").append(htmlString);
+      $(DOM_CONTAINER).append(htmlString);
     }
 
     AudioList = function () {}
     AudioList.prototype = {
       Create : function (url, dataConverter) {
         getJSON(url, function (data) {
+          // Convert Data
           var convertedData = dataConverter(data);
+          var modelCollection = [];
           convertedData.forEach(function (model) {
-            createAudioDomElement(modelConverter(model));
+            modelCollection.push(modelConverter(model));
+          });
+          // Create Play Button
+          var player = new Player(modelCollection);
+          // Create List
+          modelCollection.forEach(function (model) {
+            createAudioDomElement(model);
           });
         });
       }
     };
   })();
+
+  //
+  // Player --------------------------------------------------------------------
+  //
+  var PLAYING_CLASS_NAME = "play-button-spin";
+
+  var Player = function (data) {
+    this.data = data;
+    this.createDomPlayButton();
+  };
+  Player.prototype = {
+    index : 0,
+    getAudioUrl : function (index) { return this.data[index].public_url;},
+    getAudioModelByIndex : function (index) {
+      if (this.data != null &&
+          this.data.length > index) {
+        return this.data[index];
+      }
+      return null;
+    },
+    createDomPlayButton : function () {
+      // Create Play Button
+      this.$playerHolder = $('<div class="g-cell audio__item"></div>');
+      this.$playerImage = $('<img class="" src="'+ ROOT_URL + 'svg/play-button-2.svg' +'" style="height:auto;margin:0em 1em 5em 1em;max-width:100%;"/>');
+      this.$playerImage.click(this.playBtnPressed.bind(this));
+      this.$playerHolder.append(this.$playerImage);
+      $(DOM_CONTAINER).append(this.$playerHolder);
+    },
+    playAudio : function (audioModel) {
+      if (audioModel === null) { return; }
+      var $audio = $("#" + audioModel.htmlId);
+      var audio = $audio.get(0);
+      if (audio !== null) {
+        if (audio.currentTime === 0) {
+          audio.addEventListener("ended", this.handleAudioFinished.bind(this));
+        }
+        audio.play();
+      }
+    },
+    stopAudio: function(audioModel) {
+      if (audioModel === null) { return; }
+      var $audio = $("#" + audioModel.htmlId);
+      var audio = $audio.get(0);
+      if (audio !== null) {
+        audio.pause();
+      }
+    },
+    handleAudioFinished : function () {
+      this.index++;
+      this.playAudio(this.getAudioModelByIndex(this.index));
+    },
+    playBtnPressed : function (e) {
+      if (this.$playerImage.hasClass(PLAYING_CLASS_NAME)) { // playing
+        this.$playerImage.removeClass(PLAYING_CLASS_NAME);
+        this.stopAudio(this.getAudioModelByIndex(this.index));
+      } else {
+        this.$playerImage.addClass(PLAYING_CLASS_NAME);
+        this.playAudio(this.getAudioModelByIndex(this.index));
+      }
+    }
+  };
   //
   // Main ----------------------------------------------------------------------
   //
