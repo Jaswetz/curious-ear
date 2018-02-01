@@ -113,6 +113,10 @@
         if (audio.currentTime === 0) {
           audio.addEventListener("ended", this.handleAudioFinished.bind(this));
         }
+        // Google Analytics
+        if (typeof ga === "function") {
+          ga('send', 'event', 'Audio', 'play');
+        }
         audio.play();
       }
     },
