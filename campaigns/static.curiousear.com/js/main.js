@@ -27,7 +27,6 @@
     function modelConverter (modelIn) {
       var modelOut = {};
       if (modelIn instanceof Object) {
-        // console.log(modelIn);
         var recordingDuration = moment.duration(modelIn.length_in_seconds, 'seconds');
         modelOut.timestamp = moment.utc(modelIn.timestamp).local().format("dddd, MMMM Do YYYY, h:mm a") || "No Time Stamp";
         modelOut.public_url = modelIn.public_url || "#";
@@ -46,15 +45,14 @@
       var htmlString = '';
       // htmlString += '<p>' + model.timestamp + "</p>";
       // htmlString += '<p>' + model.duration + "</p>";
-      htmlString += '<div class="g-cell audio__item margin-bottom--small">';
-      htmlString += '<audio id="' + model.htmlId + '" controls="controls" preload="none">';
+      htmlString += '<div class="g-cell">';
+      htmlString += '<audio class="center" id="' + model.htmlId + '" controls="controls" preload="none">';
       htmlString += '<source src="' + model.public_url + '">';
       htmlString += '</audio>';
       htmlString += '</div>';
-      htmlString += '<div class="g-cell audio__item margin-bottom--large">';
-      htmlString += '<div class="g">';
-      htmlString += '<div class="g-cell--1of3"><a href="'+ model.share_url +'" target="__blank" class="footer__link">Share</a>:</div>';
-      htmlString += '<div class="g-cell--2of3"><input type="text" name="shareurl" value="' + model.share_url + '" onClick="this.setSelectionRange(0, this.value.length)"></div>';
+      htmlString += '<div class="g-cell margin-bottom--large">';
+      htmlString += '<a class="center" href="'+ model.share_url +'" target="__blank">Share</a>';
+      // htmlString += '<div><a href="'+ model.share_url +'" target="__blank">Share</a>:<input class="g-cell--full" type="text" name="shareurl" value="' + model.share_url + '" onClick="this.setSelectionRange(0, this.value.length)"></div>';
       htmlString += '</div>';
       $(DOM_CONTAINER).append(htmlString);
     }
@@ -101,11 +99,11 @@
     },
     createDomPlayButton : function () {
       // Create Play Button
-      this.$playerHolder = $('<div class="g-cell audio__item"></div>');
-      this.$playerImage = $('<img class="" src="'+ ROOT_URL + 'svg/play-button-2.svg' +'" style="height:auto;margin:0em 1em 5em 1em;max-width:100%;"/>');
+      var $playerHolder = $('<div class="g-cell"></div>');
+      this.$playerImage = $('<img alt="Play All" class="center" src="'+ ROOT_URL + 'svg/play-button-2.svg' +'" style="cursor:pointer;width:200px;height:auto;margin-bottom:5em;max-width:100%;"/>');
       this.$playerImage.click(this.playBtnPressed.bind(this));
-      this.$playerHolder.append(this.$playerImage);
-      $(DOM_CONTAINER).append(this.$playerHolder);
+      $playerHolder.append(this.$playerImage);
+      $(DOM_CONTAINER).append($playerHolder);
     },
     playAudio : function (audioModel) {
       if (audioModel === null) { return; }
