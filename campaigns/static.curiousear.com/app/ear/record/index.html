@@ -1,0 +1,294 @@
+<html>
+<head>
+<style>
+    @font-face {
+        font-family: 'CuriousFont';
+        src: url('../CuriousText.ttf');
+    }
+    html * {
+       color: white;
+       font-family: CuriousFont;
+    }
+    body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    }
+    body, html {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    img, div {
+        transition: opacity ease-in-out 2s;
+    }
+    .Hide {
+        opacity:0;
+    }
+    .RecordStopText {
+        font-size:3em;
+        margin: 0;
+        padding-top: 200px;
+        padding-left: 100px;
+        padding-right: 100px;
+        height: 60px;
+    }
+    .Copy {
+        position:absolute;
+        top: 500px;
+        left: 0;
+        width: 100%;
+        font-size: 2.7em;
+        text-align:center;
+        opacity:0;
+    }
+    @keyframes FadeIn1 {
+      0% {opacity: 0;}
+      2% {opacity: 1;}
+      23% {opacity: 1;}
+      25% {opacity: 0;}
+      100% {opacity: 0;}
+    }
+    @keyframes FadeIn2 {
+      0% {opacity: 0;}
+      25% {opacity: 0;}
+      27% {opacity: 1;}
+      48% {opacity: 1;}
+      50% {opacity: 0;}
+      100% {opacity: 0;}
+    }
+    @keyframes FadeIn3 {
+      0% {opacity: 0;}
+      50% {opacity: 0;}
+      52% {opacity: 1;}
+      73% {opacity: 1;}
+      75% {opacity: 0;}
+      100% {opacity: 0;}
+    }
+    @keyframes FadeIn4 {
+      0% {opacity: 0;}
+      75% {opacity: 0;}
+      78% {opacity: 1;}
+      98% {opacity: 1;}
+      100% {opacity: 0;}
+    }
+    .FadeIn1 {
+        animation-name: FadeIn1;
+        animation-duration: 45s;
+        animation-delay:1.5s;
+        animation-iteration-count:infinite;
+    }
+    .FadeIn2 {
+        animation-name: FadeIn2;
+        animation-duration: 45s;
+        animation-delay:1.5s;
+        animation-iteration-count:infinite;
+    }
+    .FadeIn3 {
+        animation-name: FadeIn3;
+        animation-duration: 45s;
+        animation-delay:1.5s;
+        animation-iteration-count:infinite;
+    }
+    .FadeIn4 {
+        animation-name: FadeIn4;
+        animation-duration: 45s;
+        animation-delay:1.5s;
+        animation-iteration-count:infinite;
+    }
+    @keyframes Blink {
+      10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+
+      20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+
+      30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+
+      40%, 60% {
+        transform: translate3d(4px, 0, 0);
+      }
+    }
+    .Blink {
+        animation-name: Blink;
+        animation-duration: 5s;
+        animation-iteration-count:infinite;
+    }
+</style>
+</head>
+<body style="margin:0;background-color:#000;">
+    <div style="width:100%;text-align:center;">
+        <div id="recordStopText"
+             class="RecordStopText Blink">
+            Press Button to Start Recording
+        </div>
+        <img id="btn1"
+             src="App_Record.gif"
+             style="width:260px; height:261px;margin-left:auto; margin-right:auto;" />
+        <img id="btn2"
+             class="NoDisplay"
+             src="App_RecordtoStop.gif"
+             style="width:260px; height:261px;margin-left:auto; margin-right:auto; display: none;" />
+        <img id="btn3"
+             class="NoDisplay"
+             src="App_Stop.gif"
+             style="width:260px; height:261px;margin-left:auto; margin-right:auto;display: none;" />
+    </div>
+    <div id="wave"
+         class="Hide"
+         style="margin-top:30px;width:100%;text-align:center;">
+        <img src="App_waveform.gif"
+             style="width:768px; height:272px;margin-left:auto; margin-right:auto;" />
+        <span id="timeText"
+              style="font-size:5em;">0:00</span>
+    </div>
+    <div class="Copy FadeIn1">
+        <div style="padding:0 60px">
+			<p>Why is celebrating Black History Month important?</p>
+            <!-- <p>Tell a story, whisper a secret,<br>
+               sing a song!</p>
+            <p>Describe a day you'll never forget.</p>
+            <p>What change would you like<br>
+               to see in your community?</p> -->
+        </div>
+    </div>
+    <div class="Copy FadeIn2">
+        <div style="padding:0 60px">
+			<p>Our Black History Month theme is "It's All About Love." What is your favorite story about love?</p>
+            <!-- <p>When do you feel the most connected.</p>
+            <p>Describe a person or a place you love.</p>
+            <p>What do you wish people understood about you?</p> -->
+        </div>
+    </div>
+    <div class="Copy FadeIn3">
+        <div style="padding:0 60px">
+			<p>How do you define Black Excellence?</p>
+            <!-- <p>What do you wish you could tell someone that you haven't?</p>
+            <p>Describe a time in your life you felt the most alive.</p>
+            <p>What's an activity of yours that makes you lose track of time.</p> -->
+        </div>
+    </div>
+    <div class="Copy FadeIn4">
+        <div style="padding:0 60px">
+            <!-- <p>When's the first / last time<br>
+               you felt pure joy.</p>
+            <p>Describe your first memory.</p>
+            <p>When have you felt most different.</p> -->
+        </div>
+    </div>
+    <script>
+        // Android Interface
+        var Android = {
+            Record: function () {
+                if (window.CSharp &&
+                    window.CSharp.Record &&
+                    typeof window.CSharp.Record === "function") {
+                    window.CSharp.Record();
+                }
+            },
+            Done: function () {
+                if (window.CSharp &&
+                    window.CSharp.Done &&
+                    typeof window.CSharp.Done === "function") {
+                    window.CSharp.Done();
+                }
+            }
+        };
+        // Controller
+        var MainController = function () {
+            this.isRecord = true;
+            this.isTransitioning = false;
+            this.noTouch = false;
+            this.Render();
+        }
+        MainController.prototype = {
+
+            Render: function () {
+                this.timeText = document.getElementById("timeText");
+                this.btn1 = document.getElementById("btn1");
+                this.wave = document.getElementById("wave");
+                this.recordStopText = document.getElementById("recordStopText");
+                //this.btn1.onclick = this.Selected();
+            },
+            StartTimer: function () {
+                this.recordingTime = 0; // in seconds
+                var that = this;
+                this.timer = setInterval(function () {
+                    that.recordingTime++;
+                    // Update TimeText
+                    var min = Math.floor(that.recordingTime / 60),
+                        seconds = that.recordingTime % 60;
+
+                    if (seconds < 10) {
+                        seconds = "0" + seconds;
+                    }
+                    var string = min + ":" + seconds;
+                    that.timeText.innerText = string;
+                    // Check if past max time
+                    if (that.recordingTime >= 600)
+                    {
+                        that.StopTimer();
+                        that.Selected()(); // Trigger End
+                    }
+                }, 1000);
+            },
+            StopTimer: function () {
+                clearInterval(this.timer);
+            },
+            StartPrompt: function (cb) {
+            },
+            StopPrompt: function (cb) {
+                var copys = document.getElementsByClassName("Copy");
+                for (var i = 0; i < copys.length; i++)
+                {
+                    copys[i].innerHTML = "";
+                }
+                var length = copys.length;
+                for (var i = 0; i < length; i++) {
+                    copys[0].outerHTML = "";
+                    delete copys[0];
+                }
+            },
+            Selected: function () {
+                var that = this;
+                return function () {
+                    //that.btn1.onclick = null;
+                    if (that.isRecord) {
+                        //setTimeout(function () {
+                        //    that.btn1.onclick = that.Selected();
+                        //}, 3000);
+                        that.StartTimer();
+                        that.StopPrompt();
+                        that.btn1.src = "App_RecordtoStop.gif";
+                        that.wave.className = "";
+                        that.recordStopText.innerText = "Stop Recording"
+                        Android.Record();
+                        setTimeout(function () {
+                            that.btn1.src = "App_Stop.gif";
+                            that.isRecord = false;
+                        }, 1500);
+                    } else {
+                        that.StopTimer();
+                        that.btn1.src = "App_Record.gif";
+                        that.recordStopText.innerText = "Uploading..."
+                        that.wave.className = "Hide";
+                        that.isRecord = true;
+                        setTimeout(function () {
+                            Android.Done();
+                        }, 1500);
+                    }
+                };
+            }
+        };
+        var mainController = new MainController();
+
+		// Called from C#
+		function Selected () {
+			mainController.Selected()();
+		}
+    </script>
+</body>
+</html>
