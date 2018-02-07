@@ -17,7 +17,7 @@
         <li class="g-cell">
             <div class="profile__title">
                 <h3 class="h5">Travis Abels</h3>
-                <h4 class="h6">Artistic Director</h4>
+                <h4 class="h6">Co-Founder</h4>
             </div>
             <div class="profile">
                 <img src="images/img--travis.png" alt="Travis Abels" class="profile__img">
@@ -27,24 +27,21 @@
             </div>
         </li>
         <li class="g-cell">
-<div class="profile__title">
-            <h3 class="h5">Jocelyn Brady</h3>
-            <h4 class="h6">Producer</h4>
-        </div>
-            <div class="profile">
-                <img src="images/img--jocelyn.jpg" alt="Jocelyn Brady" class="profile__img">
-                <p class="profile__content">
-                    <b>Jocelyn Brady</b>
-                    blends her creative chops with business management skills to lead Curious Ear’s content development and project coordination. Her obsession with story--and passion for uplifting people through language--transpires in her work as brand voice
-                    consultant and co-host of Party Time, a local storytelling and comedy show.
-                </p>
+            <div class="profile__title">
+                <h3 class="h5">Dimitrii Pokrovskii</h3>
+                <h4 class="h6">Co-Founder</h4>
             </div>
+            <div class="profile">
+                <img src="images/img--dimitrii.jpg" alt="Dimitrii Pokrovskii" class="profile__img">
+                <p class="profile__content">
+                    <b>Dimitri Pokrovskii</b>, creative technologist, leads the development of our interactive software applications. <a href="http://www.engineering-bear.com" target="_new">See his other work here.</a></p>
+            </div>        
         </li>
         <li class="g-cell">
-<div class="profile__title">
-            <h3 class="h5">Jason Swetzoff</h3>
-            <h4 class="h6">UX / Front-End Dev</h4>
-        </div>
+            <div class="profile__title">
+                <h3 class="h5">Jason Swetzoff</h3>
+                <h4 class="h6">UX / Front-End Dev</h4>
+            </div>
             <div class="profile">
                 <img src="images/img--jason.jpg" alt="Jason Swetzoff" class="profile__img">
                 <p class="profile__content">
@@ -55,21 +52,10 @@
             </div>
         </li>
         <li class="g-cell">
-<div class="profile__title">
-            <h3 class="h5">Dimitrii Pokrovskii</h3>
-            <h4 class="h6">Development Lead</h4>
-        </div>
-            <div class="profile">
-                <img src="images/img--dimitrii.jpg" alt="Dimitrii Pokrovskii" class="profile__img">
-                <p class="profile__content">
-                    <b>Dimitri Pokrovskii</b>, creative technologist, leads the development of our interactive software applications. <a href="http://www.engineering-bear.com" target="_new">See his other work here.</a></p>
-            </div>
-        </li>
-        <li class="g-cell">
             <div class="profile__title">
-            <h3 class="h5">Keenan Wells</h3>
-            <h4 class="h6">Mobile app Developer</h4>
-        </div>
+                <h3 class="h5">Keenan Wells</h3>
+                <h4 class="h6">Mobile app Developer</h4>
+            </div>
             <div class="profile">
                 <img src="images/img--keenan.jpg" alt="Keenan Wells" class="profile__img">
                 <p class="profile__content">
@@ -80,9 +66,22 @@
         </li>
         <li class="g-cell">
             <div class="profile__title">
-            <h3 class="h5">Matt Borowiec</h3>
-            <h4 class="h6">Software Engineer</h4>
-
+                <h3 class="h5">Jocelyn Brady</h3>
+                <h4 class="h6">Producer</h4>
+            </div>
+            <div class="profile">
+                <img src="images/img--jocelyn.jpg" alt="Jocelyn Brady" class="profile__img">
+                <p class="profile__content">
+                    <b>Jocelyn Brady</b>
+                    blends her creative chops with business management skills to lead Curious Ear’s content development and project coordination. Her obsession with story--and passion for uplifting people through language--transpires in her work as brand voice
+                    consultant and co-host of Party Time, a local storytelling and comedy show.
+                </p>
+            </div>        
+        </li>
+        <li class="g-cell">
+            <div class="profile__title">
+                <h3 class="h5">Matt Borowiec</h3>
+                <h4 class="h6">Software Engineer</h4>
             </div>
             <div class="profile">
                 <img src="images/img--matt.jpg" alt="Matt Borowiec" class="profile__img">
@@ -95,9 +94,9 @@
         </li>
         <li class="g-cell">
             <div class="profile__title">
-            <h3 class="h5">Marc Girouard</h3>
-            <h4 class="h6">Graphic Design / Animation</h4>
-        </div>
+                <h3 class="h5">Marc Girouard</h3>
+                <h4 class="h6">Graphic Design / Animation</h4>
+            </div>
             <div class="profile">
                 <img src="images/img--marc.jpg" alt="Marc Girouard" class="profile__img">
                 <p class="profile__content">
@@ -106,7 +105,6 @@
                 </p>
             </div>
         </li>
-
     </ul>
 </main>
 {% include "partials/footer.nunjucks" %}
