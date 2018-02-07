@@ -1,4 +1,5 @@
 .sass-cache/
+.vscode/
 *.css.map
 .DS_Store
 *.log
@@ -6,3 +7,5 @@ node_modules
 dest
 *.node
 styleguide
+package-lock.json
+campaigns/static.curiousear.com/css/app.css

@@ -12,8 +12,9 @@
     </div>
     <div class="page--content">
       <div id="audioContainer" class="g--full g--1of1 g audio margin-top"></div>
-      <script src="js/vendor/moment.min.js"></script>
-      <script src="js/featured_audio_list.js"></script>
+      <script src="http://static.curiousear.com/js/vendor/moment.min.js"></script>
+      <script src="http://static.curiousear.com/js/main.js"></script>
+      <script>window.CreateAudioList(null, true);</script>
     </div>
   </main>
   {% include "partials/footer.nunjucks" %}

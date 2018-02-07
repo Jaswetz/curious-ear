@@ -62,8 +62,7 @@
             <div class="profile">
                 <img src="images/img--dimitrii.jpg" alt="Dimitrii Pokrovskii" class="profile__img">
                 <p class="profile__content">
-                    <b>Dimitri Pokrovskii</b>, creative technologist, leads the development of our interactive software applications. His passion for making inspirational digital experiences led to work with the Diode Project, a free, interactive community event, and
-                    MoMa’s Object Photo, a website that turns decades of the museum’s rich history into a visual format easily accessible by all.</p>
+                    <b>Dimitri Pokrovskii</b>, creative technologist, leads the development of our interactive software applications. <a href="http://www.engineering-bear.com" target="_new">See his other work here.</a></p>
             </div>
         </li>
         <li class="g-cell">

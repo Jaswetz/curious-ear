@@ -1,11 +1,12 @@
 .audio {
-  &__item {
-    display: flex;
-    justify-content: center;
+
+  .play-button-spin {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
   }
-  audio {
-    margin-top: $spacing--small;
-    width: 100%;
-    max-width: 600px;
-  }
+  
+  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 }
