@@ -61,6 +61,10 @@
     AudioList.prototype = {
       Create : function (url, dataConverter) {
         getJSON(url, function (data) {
+          // Check if empty or error
+          console.log(data);
+          if (data instanceof Array && data.length == 0) {return;}
+
           // Convert Data
           var convertedData = dataConverter(data);
           var modelCollection = [];
