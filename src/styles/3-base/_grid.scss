@@ -1,5 +1,7 @@
 // Grid
 
+$grid-margin: 2rem;
+
 // Styleguide does not inherit box-sizing.
 .ng-binding {
   box-sizing: border-box;
@@ -8,9 +10,10 @@
 html {
   box-sizing: border-box;
 }
+
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -18,7 +21,6 @@ html {
 
 .g {
   display: flex;
-
   flex-wrap: wrap;
 }
 
@@ -30,10 +32,10 @@ html {
 
 // With Gutters
 .g--gutters {
-  margin: (-$spacing) 0 $spacing (-$spacing);
+  margin: (-$grid-margin) 0 $grid-margin (-$grid-margin);
 
   > .g-cell {
-    padding: $spacing 0 0 $spacing;
+    padding: $grid-margin 0 0 $grid-margin;
   }
 }
 
@@ -49,29 +51,35 @@ html {
 .g--top {
   align-items: flex-start;
 }
+
 .g--bottom {
   align-items: flex-end;
 }
+
 .g--center {
   align-items: center;
 }
+
 .g--justifyCenter {
   justify-content: center;
 }
+
 .g--autoSize {
   -webkit-box-flex: 0;
   -webkit-flex: none;
-      -ms-flex: none;
-          flex: none;
+  -ms-flex: none;
+  flex: none;
 }
 
 // Alignment per cell
 .g-cell--top {
   align-self: flex-start;
 }
+
 .g-cell--bottom {
   align-self: flex-end;
 }
+
 .g-cell--center {
   align-self: center;
 }
@@ -80,15 +88,19 @@ html {
 .g--fit > .g-cell {
   flex: 1;
 }
+
 .g--full > .g-cell {
   flex: 0 0 100%;
 }
+
 .g--1of2 > .g-cell {
   flex: 0 0 50%;
 }
+
 .g--1of3 > .g-cell {
   flex: 0 0 33.3333%;
 }
+
 .g--1of4 > .g-cell {
   flex: 0 0 25%;
 }
@@ -138,15 +150,19 @@ html {
   .g--fit--small > .g-cell {
     flex: 1;
   }
+
   .g--full--small > .g-cell {
     flex: 0 0 100%;
   }
+
   .g--1of2--small > .g-cell {
     flex: 0 0 50%;
   }
+
   .g--1of3--small > .g-cell {
     flex: 0 0 33.3333%;
   }
+
   .g--1of4--small > .g-cell {
     flex: 0 0 25%;
   }
@@ -157,15 +173,19 @@ html {
   .g--fit--medium > .g-cell {
     flex: 1;
   }
+
   .g--full--medium > .g-cell {
     flex: 0 0 100%;
   }
+
   .g--1of2--medium > .g-cell {
     flex: 0 0 50%;
   }
+
   .g--1of3--medium > .g-cell {
     flex: 0 0 33.3333%;
   }
+
   .g--1of4--medium > .g-cell {
     flex: 0 0 25%;
   }
@@ -176,15 +196,19 @@ html {
   .g--fit--large > .g-cell {
     flex: 1;
   }
+
   .g--full--large > .g-cell {
     flex: 0 0 100%;
   }
+
   .g--1of2--large > .g-cell {
     flex: 0 0 50%;
   }
+
   .g--1of3--large > .g-cell {
     flex: 0 0 33.3333%;
   }
+
   .g--1of4--large > .g-cell {
     flex: 0 0 25%;
   }
@@ -195,15 +219,19 @@ html {
   .g--fit--xlarge > .g-cell {
     flex: 1;
   }
+
   .g--full--xlarge > .g-cell {
     flex: 0 0 100%;
   }
+
   .g--1of2--xlarge > .g-cell {
     flex: 0 0 50%;
   }
+
   .g--1of3--xlarge > .g-cell {
     flex: 0 0 33.3333%;
   }
+
   .g--1of4--xlarge > .g-cell {
     flex: 0 0 25%;
   }
@@ -214,18 +242,31 @@ html {
   .g--fit--xxlarge > .g-cell {
     flex: 1;
   }
+
   .g--full--xxlarge > .g-cell {
     flex: 0 0 100%;
   }
+
   .g--1of2--xxlarge > .g-cell {
     flex: 0 0 50%;
   }
+
   .g--1of3--xxlarge > .g-cell {
     flex: 0 0 33.3333%;
   }
+
   .g--1of4--xxlarge > .g-cell {
     flex: 0 0 25%;
   }
 }
 
 // @todo fix nexting cells: https://philipwalton.github.io/solved-by-flexbox/demos/grids/
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .aligner__item {
+    max-width: 50%;
+  }
+}
