@@ -13,17 +13,17 @@
         <a href="mailto:hello@curiousear.com" alt="Curious Comedy Email">let us know!</a>
       </p>
     </div>
-    <h3 class="margin-top">Upcoming Events</h3>
+    <h3 class="margin-top">Current Event</h3>
     <div class="event">
       <div class="media">
         <div class="media__figure">
-          <img src="images/img--roosevelt.jpg" alt="What Now PDX Logo">
+          <img src="images/img--roosevelt-ear.jpg" alt="What Now PDX Logo">
         </div>
         <div class="media__body">
           <h4 class="event__title">Roosevelt High School</h4>
           <span class="event__date">February 2018</span>
           <p>
-            We are participating in African American History Month at Roosevelt High School. More info to come soon!
+            We are participating in Black History Month at Roosevelt High School - <a href="http://roosevelthigh.curiousear.com/" target="__blank">Hear what students are saying.</a>
           </p>
         </div>
       </div>
