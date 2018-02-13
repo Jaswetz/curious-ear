@@ -62,7 +62,7 @@
       Create : function (url, dataConverter) {
         getJSON(url, function (data) {
           // Check if empty or error
-          console.log(data);
+          // console.log(data);
           if (data instanceof Array && data.length == 0) {return;}
 
           // Convert Data
@@ -190,7 +190,7 @@
     $(document).ready(function() {
       audioList = new AudioList();
       if (featured) {
-        audioList.Create("http://api.curiousear.com/audio/featured", shuffleDataConverter);
+        audioList.Create("https://api.curiousear.com/audio/list?featured=true", shuffleDataConverter);
       } else {
         audioList.Create("https://api.curiousear.com/audio/list?location=" + location, passThroughDataConverter);
       }
