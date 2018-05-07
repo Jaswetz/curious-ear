@@ -17,13 +17,13 @@
     <div class="event">
       <div class="media">
         <div class="media__figure">
-          <img src="images/img--roosevelt-ear.jpg" alt="What Now PDX Logo">
+          <img src="images/img--roosevelt-ear.jpg" alt="Roosevelt High School">
         </div>
         <div class="media__body">
-          <h4 class="event__title">Roosevelt High School</h4>
-          <span class="event__date">February 2018</span>
+          <h4 class="event__title">Roosevelt High School - Immigrant Stories</h4>
+          <span class="event__date">May 2018</span>
           <p>
-            We are participating in Black History Month at Roosevelt High School - <a href="http://roosevelthigh.curiousear.com/" target="__blank">Hear what students are saying.</a>
+            May is Immigrant Month - a time to reflect and celebrate the diversity of our country. At Roosevelt, students are telling their own personal stories. Curious Ear is there to listen and share what they say. Stay tuned.
           </p>
         </div>
       </div>
@@ -32,13 +32,44 @@
     <div class="event">
       <div class="media">
         <div class="media__figure">
-          <img src="images/img--whatnowpdx.jpg" alt="What Now PDX Logo">
+          <img src="images/img--foc.jpg" alt="Future of Cannabis">
+        </div>
+        <div class="media__body">
+          <h4 class="event__title">The Future of Cannabis - Event</h4>
+          <span class="event__date">March 2018</span>
+          <p>
+            Hundreds of future-minded folks descended on The Armory on Friday, March 16, for 15+ inspiring Toke Talks by a line up of speakers from up and down the west coast, and play at more than a dozen "un-booths," which toured the sights, sounds, tastes and ideas of #ourcannabisfuture. <a href="https://www.facebook.com/pg/orcannassociation/photos/?tab=album&album_id=1612675748780514" target="_blank">Toke Talks 2.0</a> is a one-of-a-kind cannabis convergence in Portland, Oregon, produced by the Oregon Cannabis Association, where research, innovation and technology come together to meet our most creative cannabis selves. <a href="http://ourcannabisfuture.curiousear.com/" target="__blank">For those who couldn't make it up on stage, Curious Ear was there to listen.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--roosevelt-ear.jpg" alt="What Now PDX Logo">
+        </div>
+        <div class="media__body">
+          <h4 class="event__title">Roosevelt High School - Black History Month</h4>
+          <span class="event__date">February 2018</span>
+          <p>
+            We are participating in Black History Month at Roosevelt High School - <a href="http://roosevelthigh.curiousear.com/" target="__blank">Hear what students are saying.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--whatnowpdx.jpg" alt="Roosevelt High School">
         </div>
         <div class="media__body">
           <h4 class="event__title">What Now PDX</h4>
           <span class="event__date">November 21, 2017</span>
           <p>
-            We asked: "What is a reason you get up in the morning?"<a href="http://whatnowpdx.curiousear.com/" target="__blank">Hear what was said.</a>
+            What Now is a proactive event working to bring people out of their homes to connect with their surrounding community and non-profits, making positive change happen.
+            On November 21st, 2016 What Now? featured over 55 local and statewide nonprofit organizations, political action groups, and artists who together, helped find positive and proactive ways to use energy and action for good. Organizations signed up 100s of volunteers at the standing-room.
+            What Now? 2017 is more organized, more inclusive and more directed. Our mission remains: get to work, for the greater good.
+            At the event we asked: "What is a reason you get up in the morning?"<a href="http://whatnowpdx.curiousear.com/" target="__blank">Hear what was said.</a>
           </p>
         </div>
       </div>
