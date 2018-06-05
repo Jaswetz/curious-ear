@@ -13,7 +13,22 @@
         <a href="mailto:hello@curiousear.com" alt="Curious Comedy Email">let us know!</a>
       </p>
     </div>
-    <h3 class="margin-top">Current Event</h3>
+    <h3 class="margin-top">Future Events</h3>
+    <div class="event">
+      <div class="media">
+        <div class="media__figure">
+          <img src="images/img--pickathon.png" alt="Pickathon">
+        </div>
+        <div class="media__body">
+          <h4 class="event__title">Pickathon</h4>
+          <span class="event__date">August 2018</span>
+          <p>
+            More info coming soon...
+          </p>
+        </div>
+      </div>
+    </div>
+    <h3 class="margin-top">Past Events</h3>
     <div class="event">
       <div class="media">
         <div class="media__figure">
@@ -28,7 +43,6 @@
         </div>
       </div>
     </div>
-    <h3 class="margin-top">Past Events</h3>
     <div class="event">
       <div class="media">
         <div class="media__figure">
