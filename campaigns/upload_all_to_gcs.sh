@@ -4,7 +4,7 @@ declare -a arr=("alder" "blackhistorymonth" "easter2017" "fallstories" "mealsonw
 ## now loop through the above array
 for i in "${arr[@]}"
 do
-   echo "$i.curiousear.com"
+   echo "$i.curiousear.com -------------------------------------"
    cd "$i.curiousear.com"
    sh upload_to_gcs.sh
    cd ..
