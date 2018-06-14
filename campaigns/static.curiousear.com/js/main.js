@@ -87,10 +87,7 @@
     function modelConverter (modelIn) {
       var modelOut = {};
       if (modelIn instanceof Object) {
-        var recordingDuration = moment.duration(modelIn.length_in_seconds, 'seconds');
-        modelOut.timestamp = moment.utc(modelIn.timestamp).local().format("dddd, MMMM Do YYYY, h:mm a") || "No Time Stamp";
         modelOut.public_url = modelIn.public_url || "#";
-        modelOut.duration = recordingDuration.humanize();
         modelOut.htmlId = "audio" + modelConverterIndex;
         modelOut.htmlContainerId = "container" + modelConverterIndex;
         modelConverterIndex++;
@@ -104,7 +101,6 @@
 
     function createAudioDomElement(model, config) {
       var htmlString = '';
-      // htmlString += '<p>' + model.timestamp + "</p>";
       // htmlString += '<p>' + model.duration + "</p>";
       if (config.showList) {
         htmlString += '<div class="g-cell audioContainer" id="' + model.htmlContainerId + '" >';

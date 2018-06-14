@@ -44,7 +44,7 @@
   $(document).ready(function() {
     var audioPlayer = new AudioPlayer();
     var filename = getUrlVars()["f"];
-    console.log(filename);
+    // console.log(filename);
     audioPlayer.Create(AUDIO_STORAGE_URL + filename);
   });
 })($)
