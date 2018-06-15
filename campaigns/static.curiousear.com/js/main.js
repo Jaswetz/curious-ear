@@ -29,6 +29,8 @@
     this.config.showList = valueOrDefault(config.showList, false);
     // Shuffle Audio Story Order
     this.config.shuffle = valueOrDefault(config.shuffle, true);
+    // Show Title
+    this.config.showTitle = valueOrDefault(config.showTitle, false);
   };
   (function () {
 
@@ -95,17 +97,21 @@
         var parts = modelIn.public_url.split("/");
         var filename = parts[parts.length - 1];
         modelOut.share_url = "http://static.curiousear.com/story.html?f=" + filename;
+        modelOut.title = modelIn.tags[0] || "";
       }
       return modelOut;
     }
 
     function createAudioDomElement(model, config) {
       var htmlString = '';
-      // htmlString += '<p>' + model.duration + "</p>";
       if (config.showList) {
         htmlString += '<div class="g-cell audioContainer" id="' + model.htmlContainerId + '" >';
       } else {
         htmlString += '<div class="g-cell audioContainer" id="' + model.htmlContainerId + '" style="display:none">';
+      }
+      if (config.showTitle)
+      {
+        htmlString += '<p>' + model.title + "</p>";
       }
       htmlString += '<audio class="center" id="' + model.htmlId + '" controls="controls" preload="none">';
       htmlString += '<source src="' + model.public_url + '">';
