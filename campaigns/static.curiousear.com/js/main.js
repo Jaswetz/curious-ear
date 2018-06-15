@@ -111,7 +111,7 @@
       }
       if (config.showTitle)
       {
-        htmlString += '<p>' + model.title + "</p>";
+        htmlString += '<p class="center margin-bottom--small">' + model.title + "</p>";
       }
       htmlString += '<audio class="center" id="' + model.htmlId + '" controls="controls" preload="none">';
       htmlString += '<source src="' + model.public_url + '">';
