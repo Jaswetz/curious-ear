@@ -117,7 +117,7 @@
       htmlString += '<source src="' + model.public_url + '">';
       htmlString += '</audio>';
       htmlString += '<div class="g-cell margin-bottom--large">';
-      htmlString += '<a class="center" href="'+ model.share_url +'" target="__blank">Share</a>';
+      htmlString += '<a class="center" href="'+ model.share_url +'" target="_blank'+ model.htmlId +'">Share</a>';
       htmlString += '</div>';
       htmlString += '</div>';
       $(DOM_CONTAINER).append(htmlString);
@@ -194,16 +194,16 @@
         $(DOM_CONTAINER).append($playerHolder);
       },
       playAudio : function (audioModel) {
-        // Hide All Audio Files
-        var els = document.getElementsByClassName("audioContainer");
-        for (var i = 0; i < els.length; i++)
-        {
-          var el = els[i];
-          el.style.display = "none";
-        }
-        // Show current Audio File
-        var elToShow = document.getElementById(audioModel.htmlContainerId);
-        elToShow.style.display = "block";
+        // // Hide All Audio Files
+        // var els = document.getElementsByClassName("audioContainer");
+        // for (var i = 0; i < els.length; i++)
+        // {
+        //   var el = els[i];
+        //   el.style.display = "none";
+        // }
+        // // Show current Audio File
+        // var elToShow = document.getElementById(audioModel.htmlContainerId);
+        // elToShow.style.display = "block";
         // Play
         var $audio = $("#" + audioModel.htmlId);
         var audio = $audio.get(0);
