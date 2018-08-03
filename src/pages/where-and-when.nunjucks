@@ -13,7 +13,7 @@
         <a href="mailto:hello@curiousear.com" alt="Curious Comedy Email">let us know!</a>
       </p>
     </div>
-    <h3 class="margin-top">Future Events</h3>
+    <h3 class="margin-top">Current Event</h3>
     <div class="event">
       <div class="media">
         <div class="media__figure">
@@ -23,7 +23,12 @@
           <h4 class="event__title">Pickathon</h4>
           <span class="event__date">August 2018</span>
           <p>
-            More info coming soon...
+            At this year's Pickathon, The Curious Ear is asking:
+            Tell a story, whisper a secret, sing a song!
+            Describe a person or a place you love.
+            What’s a song that holds special meaning for you, and why?
+            Describe a moment that changed your perspective.
+            <a href="http://pickathon.curiousear.com/" target="__blank_Pickathon">This is what folks are saying.</a>
           </p>
         </div>
       </div>
